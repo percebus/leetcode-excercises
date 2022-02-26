@@ -1,0 +1,39 @@
+{
+  "name": "leetcode-excercises",
+  "version": "0.1.0",
+  "description": "LeetCode.com excercises",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "pip:install": "python -m pip install -r requirements.txt",
+    "npm:install:globa": "npm install -g standard grunt-cli",
+    "setup": "npm run pip:install && npm run npm:install:global",
+    "setup:ci": "npm run setup",
+    "grunt:lint": "grunt lint --color --verbose",
+    "lint": "npm run grunt:lint",
+    "test": "exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/percebus/leetcode-excercises.git"
+  },
+  "keywords": [
+    "leet",
+    "leetcode",
+    "l33t",
+    "excercises"
+  ],
+  "author": "percebus",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/percebus/leetcode-excercises/issues"
+  },
+  "homepage": "https://github.com/percebus/leetcode-excercises#readme",
+  "dependencies": {
+    "grunt": "^1.4.1",
+    "grunt-pylint": "^2.0.1",
+    "load-grunt-tasks": "^5.1.0"
+  },
+  "devDependencies": {
+    "grunt-shell": "^3.0.1"
+  }
+}
