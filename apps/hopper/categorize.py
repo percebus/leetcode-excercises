@@ -24,15 +24,16 @@ def categorize(words, prefix=''):
 
 def pluck(data):
     results = []
+
     def recurse(dictionary):
         for key, value in dictionary.items():
             if isinstance(value, dict):
                 recurse(value)
             # elif (type(value) is str): # TODO? or XXX? overkill?
             else:  # its a str then
-                results.append(key) # FIXME very inefficient
+                results.append(key)  # FIXME very inefficient
 
-    recurse(data) # FIXME procdural
+    recurse(data)  # FIXME procdural
     return results
 
 
