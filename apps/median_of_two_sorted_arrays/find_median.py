@@ -16,10 +16,14 @@ def find_median(nums1, nums2):
     return (nums3[idx] + nums3[idx + 1]) / 2
 
 
-def main():
-    # TODO accept args
-    result = find_median([1, 2, 3, 4, 5], [])
+def run(nums1, nums2):
+    result = find_median(nums1, nums2)
     print(result)
+
+
+def main():
+    run([1, 3], [2])
+    run([1, 2, 3, 4, 5], [])
 
 
 if __name__ == "__main__":

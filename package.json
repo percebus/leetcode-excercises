@@ -10,7 +10,9 @@
     "setup:ci": "npm run setup",
     "grunt:lint": "grunt lint --color --verbose",
     "lint": "npm run grunt:lint",
-    "test": "exit 1"
+    "python:apps:main": "python apps/main.py",
+    "pretest": "npm run lint",
+    "test": "npm run python:apps:main"
   },
   "repository": {
     "type": "git",
