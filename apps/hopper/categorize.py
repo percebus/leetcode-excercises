@@ -69,9 +69,9 @@ def run(words):
     # ['b', 'dog', 'dov', 'du', 'z']
 
 
-def main():
+def run_all():
     run(('dog', 'zebra', 'duck', 'dove', 'bananas'))
 
 
 if __name__ == "__main__":
-    main()
+    run_all()

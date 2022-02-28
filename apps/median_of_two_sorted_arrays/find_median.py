@@ -1,6 +1,9 @@
 import math
 
 
+# Given two sorted arrays nums1 and nums2 of size m and n respectively,
+# return the median of the two sorted arrays.
+# The overall run time complexity should be O(log (m+n)).
 def find_median(nums1, nums2):
     nums3 = nums1 + nums2
     nums3.sort()
@@ -16,15 +19,27 @@ def find_median(nums1, nums2):
     return (nums3[idx] + nums3[idx + 1]) / 2
 
 
-def run(nums1, nums2):
+def run(nums1, nums2, expected=None):
     result = find_median(nums1, nums2)
     print(result)
+    assert result == expected
 
 
-def main():
-    run([1, 3], [2])
-    run([1, 2, 3, 4, 5], [])
+def run_all():
+    # Example 1:
+    # - Input: nums1 = [1,3], nums2 = [2]
+    # - Output: 2.00000
+    # - Explanation: merged array = [1,2,3] and median is 2.
+    run([1, 3], [2], expected=2)
+
+    # Example 2:
+    # - Input: nums1 = [1,2], nums2 = [3,4]
+    # - Output: 2.50000
+    # - Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+    run([1, 2], [3, 4], expected=2.5)
+
+    run([1, 2, 3, 4, 5], [], expected=3)
 
 
 if __name__ == "__main__":
-    main()
+    run_all()
