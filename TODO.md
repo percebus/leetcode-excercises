@@ -2,3 +2,4 @@
 
 *[x] ~~Add python unit-tester~~
 *[ ] Remove old run/test methods
+*[ ] Test Constraints

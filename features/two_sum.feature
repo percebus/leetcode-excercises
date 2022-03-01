@@ -1,4 +1,12 @@
-Feature: Two sum
+Feature: Two Sum
+# SRC: https://leetcode.com/problems/two-sum/
+#
+# Constraints:
+#   * 2 <= nums.length <= 104
+#   * -109 <= nums[i] <= 109
+#   * -109 <= target <= 109
+#   * Only one valid answer exists.
+
   Scenario Outline: only
      Given an <array> of integers nums
        And an integer <target>

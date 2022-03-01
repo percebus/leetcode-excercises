@@ -23,6 +23,7 @@ def step_impl(self):
     world.actual = median_of_two_sorted_arrays.find_median(world.nums1, world.nums2)
 
 
-@step("return the (?P<median>.+) of the two sorted arrays")
-def step_impl(self, median):
+@step("return the (?P<median>.+) of the two sorted arrays (?P<merged>.+)")
+def step_impl(self, median, merged):
+    world.merged = eval(merged)
     assert float(median) == world.actual, "expected:{expected}, got:{actual}".format(expected=median, actual=world.actual)
