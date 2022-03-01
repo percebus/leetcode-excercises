@@ -10,10 +10,10 @@
     "setup": "npm run pip:install:all && npm run npm:install:global",
     "setup:ci": "npm run setup",
     "grunt:lint": "grunt lint --color --verbose",
-    "pylint": "pylint apps/",
+    "pylint": "python -m pylint --verbose --rcfile=.pylintrc apps/",
     "lint:python": "npm run pylint",
     "lint": "npm run lint:python",
-    "python:main": "python apps/main.py",
+    "python:main": "python main.py",
     "pretest": "npm run lint",
     "test": "npm run python:main"
   },
