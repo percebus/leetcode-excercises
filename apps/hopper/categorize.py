@@ -48,7 +48,7 @@ def pluck2(data):
     return more_itertools.collapse(results)
 
 
-def run(words):
+def run(words, expected=None):
     data = categorize(words)
     pprint(data)
     # {
@@ -63,14 +63,14 @@ def run(words):
     # }
 
     # TODO benchmark pluck VS pluck2 performance
-    output = list(pluck2(data))
+    actual = list(pluck2(data))
 
-    pprint(output)
-    # ['b', 'dog', 'dov', 'du', 'z']
+    pprint(actual)
+    assert actual == expected
 
 
 def run_all():
-    run(('dog', 'zebra', 'duck', 'dove', 'bananas'))
+    run(('dog', 'zebra', 'duck', 'dove', 'bananas'), expected=['b', 'dog', 'dov', 'du', 'z'])
 
 
 if __name__ == "__main__":
