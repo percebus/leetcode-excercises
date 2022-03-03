@@ -1,20 +1,14 @@
 from aloe import step, world
 
 from apps.leetcode.two_sum import two_sum
+from features.utils import assert_is_in_range
+
 
 constraints = {
     'length': {'min': 2, 'max': 104},     #    2 <= nums.length <= 104
     'target': {'min': -109, 'max': 109},  # -109 <= target      <= 109
     'value': {'min': -109, 'max': 109}    # -109 <= nums[i]     <= 109
 }
-
-
-def assert_is_in_range(x, constraint):
-    minimum = constraint['min']
-    maximum = constraint['max']
-    assert x >= minimum, "min:{expected}, got:{actual}".format(expected=minimum, actual=x)
-    assert x <= maximum, "max:{expected}, got:{actual}".format(expected=maximum, actual=x)
-
 
 validate = {
     'value': lambda x: assert_is_in_range(x, constraints['value']),
