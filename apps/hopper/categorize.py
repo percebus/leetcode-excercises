@@ -73,5 +73,5 @@ def run_all():
     run(('dog', 'zebra', 'duck', 'dove', 'bananas'), expected=['b', 'dog', 'dov', 'du', 'z'])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run_all()

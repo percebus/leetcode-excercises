@@ -42,5 +42,5 @@ def run_all():
     run([1, 2, 3, 4, 5], [], expected=3)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run_all()
