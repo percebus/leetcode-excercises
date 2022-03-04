@@ -26,4 +26,4 @@ def step_impl(self):
 @step("return the (?P<median>.+) of the two sorted arrays (?P<merged>.+)")
 def step_impl(self, median, merged):
     world.merged = eval(merged)
-    assert float(median) == world.actual, "expected:{expected}, got:{actual}".format(expected=median, actual=world.actual)
+    assert float(median) == world.actual, f'expected:{median}, got:{world.actual}'

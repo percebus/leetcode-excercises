@@ -16,4 +16,4 @@ def step_impl(self):
 @step("return the (?P<expected>.+) smallest sorted list of ranges that cover all the numbers in the array exactly")
 def step_impl(self, expected):
     world.expected = eval(expected)
-    assert str(expected) == str(world.actual), "expected:{expected}, got:{actual}".format(expected=expected, actual=world.actual)
+    assert str(expected) == str(world.actual), f'expected:{expected}, got:{world.actual}'

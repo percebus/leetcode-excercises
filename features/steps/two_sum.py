@@ -44,11 +44,11 @@ def step_impl(self, indices, two_numbers):
     num1, num2 = world.two_numbers
     world.num1 = world.nums[idx1]
     world.num2 = world.nums[idx2]
-    assert world.num1 == num1, "expected:{expected}, got:{actual}".format(expected=num1, actual=world.num1)
-    assert world.num2 == num2, "expected:{expected}, got:{actual}".format(expected=num2, actual=world.num2)
+    assert world.num1 == num1, f'expected:{num1}, got:{world.num1}'
+    assert world.num2 == num2, f'expected:{num2}, got:{world.num2}'
 
 
 @step("they add up to (?P<target>.+)")
 def step_impl(self, target):
     result = world.num1 + world.num2
-    assert result == int(target), "expected:{expected}, got:{actual}".format(expected=target, actual=result)
+    assert result == int(target), f'expected:{target}, got:{result}'
