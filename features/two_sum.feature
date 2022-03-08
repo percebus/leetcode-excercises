@@ -9,7 +9,7 @@ Feature: Two Sum
 
   Scenario Outline: only
      Given an <array> of integers nums
-       And an integer <target>
+       And an integer <target> number
       When I call two_sum
       Then return <indices> of the <two_numbers>
        And they add up to <target>
@@ -18,7 +18,6 @@ Feature: Two Sum
   | 2, 7, 11, 15 | [2, 7, 11, 15] |      9 |  [0,  1] |   [2,  7]   |
   | 3, 2, 4      | [3, 2, 4]      |      6 |  [1,  2] |   [2,  4]   |
   | 3 x2         | [3, 3]         |      6 |  [0,  1] |   [3,  3]   |
-#
   | 0-13         | range(0,  14)  |     13 |  [0, 13] |   [0, 13]   |
   | 1-13         | range(1,  14)  |     13 |  [0, 11] |   [1, 12]   |
   | 0-99         | range(0, 100)  |     13 |  [0, 13] |   [0, 13]   |

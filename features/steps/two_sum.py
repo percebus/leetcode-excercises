@@ -25,7 +25,7 @@ def step_impl(self, array):
     map(validate['value'], array)
 
 
-@step("an integer (?P<target>.+)")
+@step("an integer (?P<target>.+) number")
 def step_impl(self, target):
     world.target = int(target)
     validate['target'](world.target)
