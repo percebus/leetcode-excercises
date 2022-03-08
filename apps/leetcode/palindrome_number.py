@@ -1,22 +1,8 @@
-import math
-
-
-def split_num(number):
-    string = str(number)
-    size = len(string)
-    is_even = size % 2 == 0
-    mid = math.ceil(size / 2) - 1
-    prefix = string[:mid + 1]
-    if is_even:
-        mid += 1
-    suffix = string[mid:]
-    return prefix, suffix
-
 
 def is_palindrome(number):
-    prefix, suffix = split_num(number)
-    last = suffix[::-1]
-    return prefix == last
+    str1 = str(number)
+    str2 = str1[::-1]
+    return str1 == str2
 
 
 def run(number, expected=None):
