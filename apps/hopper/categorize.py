@@ -70,6 +70,8 @@ def run(words, expected=None):
 
 
 def run_all():
+    run(('dog', 'zebra', 'bananas'), expected=['b', 'd', 'z'])
+    run(('dog', 'zebra', 'duck', 'bananas'), expected=['b', 'do', 'du', 'z'])
     run(('dog', 'zebra', 'duck', 'dove', 'bananas'), expected=['b', 'dog', 'dov', 'du', 'z'])
 
 
