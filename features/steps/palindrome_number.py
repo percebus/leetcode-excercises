@@ -3,9 +3,20 @@ from aloe import step, world
 from apps.leetcode import palindrome_number
 
 
+# Constraints
+#  * -2^31 <= x <= 2^31 -1
+def validate(x):
+    minimum = -2 ** 31
+    maximum = (2 ** 31) - 1
+    assert (minimum <= x)           , f'(-2^31 <= x <= 2^31 -1): {minimum} > {x}'
+    assert (           x <= maximum), f'(-2^31 <= x <= 2^31 -1): {x} > {maximum}'
+
+
 @step("an integer number (?P<x>.+)")
 def step_impl(self, x):
-    world.number = x
+    number = int(x)
+    validate(number)
+    world.number = number
 
 
 @step("I run is_palindrome\(x\)")
