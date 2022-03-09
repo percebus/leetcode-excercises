@@ -19,7 +19,7 @@ def step_impl(self, x):
     world.number = number
 
 
-@step("I run is_palindrome\(x\)")
+@step("I run is_palindrome")
 def step_impl(self):
     world.result = palindrome_number.is_palindrome(world.number)
 
