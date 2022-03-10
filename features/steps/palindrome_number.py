@@ -1,6 +1,6 @@
 from aloe import step, world
 from test.utils import assert_is_in_range
-from apps.leetcode import palindrome_number
+from problems.leetcode import palindrome_number
 
 
 constraints = {

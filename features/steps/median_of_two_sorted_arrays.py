@@ -1,6 +1,6 @@
 from aloe import step, world
 from test.utils import assert_is_in_range
-from apps.leetcode import median_of_two_sorted_arrays
+from problems.leetcode import median_of_two_sorted_arrays
 
 
 constraints = {

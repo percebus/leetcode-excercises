@@ -1,6 +1,6 @@
 from aloe import step, world
-from apps.leetcode.two_sum import two_sum
 from test.utils import assert_is_in_range
+from problems.leetcode.two_sum import two_sum
 
 
 constraints = {

@@ -1,5 +1,5 @@
-from apps.hopper import categorize
-from apps.leetcode import median_of_two_sorted_arrays, two_sum, summary_ranges
+from problems.hopper import categorize
+from problems.leetcode import median_of_two_sorted_arrays, two_sum, summary_ranges
 
 
 def main():

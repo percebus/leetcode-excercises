@@ -1,5 +1,5 @@
 from aloe import step, world
-from apps.leetcode.summary_ranges import summary_ranges
+from problems.leetcode.summary_ranges import summary_ranges
 
 
 @step("a sorted unique integer (?P<array>.+)")
