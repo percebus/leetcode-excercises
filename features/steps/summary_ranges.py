@@ -1,5 +1,4 @@
 from aloe import step, world
-
 from apps.leetcode.summary_ranges import summary_ranges
 
 

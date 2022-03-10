@@ -1,21 +1,24 @@
 from aloe import step, world
-
+from test.utils import assert_is_in_range
 from apps.leetcode import palindrome_number
 
 
-# Constraints
-#  * -2^31 <= x <= 2^31 -1
-def validate(x):
-    minimum = -2 ** 31
-    maximum = (2 ** 31) - 1
-    assert (minimum <= x)           , f'(-2^31 <= x <= 2^31 -1): {minimum} > {x}'
-    assert (           x <= maximum), f'(-2^31 <= x <= 2^31 -1): {x} > {maximum}'
+constraints = {
+    'value': {  # -2^31 <= x <= 2^31 -1
+        'min': -2 ** 31,
+        'max': (2 ** 31) - 1
+    }
+}
+
+validate = {
+    'value': lambda x: assert_is_in_range(x, constraints['value'])
+}
 
 
 @step("an integer number (?P<x>.+)")
 def step_impl(self, x):
     number = int(x)
-    validate(number)
+    validate['value'](number)
     world.number = number
 
 

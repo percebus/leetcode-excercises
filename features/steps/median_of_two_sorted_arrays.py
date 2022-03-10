@@ -1,26 +1,33 @@
 from aloe import step, world
+from test.utils import assert_is_in_range
 from apps.leetcode import median_of_two_sorted_arrays
 
 
-# 0 <= m <= 1000
+constraints = {
+    'm'  : {'min': 0, 'max': 1000},  # 0 <=   m   <= 1000
+    'm+n': {'min': 1, 'max': 2000},  # 1 <= m + n <= 2000
+}
+
+
 def validate_list(array, expected):
     length = len(array)
     assert length == expected, f'len({array}): expected:{expected}, got:{length}'
-    minimum = 0
-    maximum = 1000
-    assert (minimum <= length)           , f'({minimum} <= m <= {maximum}): {length}'
-    assert (           length <= maximum), f'({minimum} <= m <= {maximum}): {length}'
+    validate['m'](length)
 
 
-# 1 <= m + n <= 2000
 def validate_lists(array1, array2):
     m = len(array1)
     n = len(array2)
-    length = m + n
-    minimum = 1
-    maximum = 2000
-    assert (minimum <= length)           , f'({minimum} <= m + n <= {maximum}): {length}'
-    assert (           length <= maximum), f'({minimum} <= m + n <= {maximum}): {length}'
+    compound = m + n
+    validate['m+n'](compound)
+
+
+validate = {
+    'm': lambda m: assert_is_in_range(m, constraints['m']),
+    'm+n': lambda x: assert_is_in_range(x, constraints['m+n']),
+    'list': validate_list,
+    'lists': validate_lists
+}
 
 
 @step("two sorted arrays (?P<array1>.+) and (?P<array2>.+)")
@@ -33,9 +40,9 @@ def step_impl(self, array1, array2):
 def step_impl(self, m, n):
     world.m = int(m)
     world.n = int(n)
-    validate_list(world.nums1, world.m)
-    validate_list(world.nums2, world.n)
-    validate_lists(world.nums1, world.nums2)
+    validate['list'](world.nums1, world.m)
+    validate['list'](world.nums2, world.n)
+    validate['lists'](world.nums1, world.nums2)
 
 
 @step("I call find_median")
