@@ -1,6 +1,7 @@
 Feature: Palindrome Number
 # SRC: https://leetcode.com/problems/palindrome-number/
 #
+# An integer is a palindrome when it reads the same backward as forward.
 # For example, 121 is a palindrome while 123 is not.
 #
 # Constraints
