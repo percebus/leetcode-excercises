@@ -39,7 +39,7 @@ def before_example(scenario, outline, steps):
     world.nums1 = None
     world.nums2 = None
     world.m = None
-    world.n= None
+    world.n = None
     world.merged = None
     world.actual = None
 

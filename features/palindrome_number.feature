@@ -25,9 +25,22 @@ Feature: Palindrome Number
      When I run is_palindrome
      Then return False if x is NOT palindrome integer
   Examples:
-    |   x  | mirrored |                                        explaination                                                       |
-    |   -1 | 1-       |  -1 != 1-                                                                                                 |
-    |   12 | 21       |  12 != 21                                                                                                 |
-    |  123 | 321      | 123 != 321                                                                                                |
-    | -121 | 121-     | From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome. |
-    |   10 | 01       | Reads 01 from right to left. Therefore it is not a palindrome.                                            |
+    |      x      |   mirrored  |                                        explaination                                                       |
+    |          -1 | 1-          |  -1 != 1-                                                                                                 |
+    |          12 | 21          |  12 != 21                                                                                                 |
+    |         123 | 321         | 123 != 321                                                                                                |
+    |        -121 | 121-        | From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome. |
+    |          10 | 01          | Reads 01 from right to left. Therefore it is not a palindrome.                                            |
+    | -2147483646 | 6463847412- | (-2 ** 31) +2                                                                                           |
+    |  2147483646 | 6463847412  |  (2 ** 31) -2                                                                                            |
+
+
+  Scenario Outline: out of bounds
+    Given an invalid integer number <x>
+     Then handle the exception
+  Examples:
+    |      x      |     number    |
+    |  2147483650 | ( 2 ** 31) +2 |
+    |  2147483649 | ( 2 ** 31) +1 |
+    | -2147483649 | (-2 ** 31) -1 |
+    | -2147483650 | (-2 ** 31) -2 |

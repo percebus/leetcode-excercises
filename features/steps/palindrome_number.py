@@ -15,11 +15,25 @@ validate = {
 }
 
 
+def parse(x):
+    return eval(x)
+
+
 @step("an integer number (?P<x>.+)")
 def step_impl(self, x):
-    number = int(x)
+    number = parse(x)
     validate['value'](number)
     world.number = number
+
+
+@step("an invalid integer number (?P<x>.+)")
+def step_impl(self, x):
+    number = parse(x)
+    try:
+        validate['value'](number)
+        world.number = number
+    except Exception as exception:
+        world.exception = exception
 
 
 @step("I run is_palindrome")
@@ -35,3 +49,9 @@ def step_impl(self):
 @step("return False if x is NOT palindrome integer")
 def step_impl(self):
     assert world.result is False
+
+
+@step("handle the exception")
+def step_impl(self):
+    assert world.actual is None, f'{world.actual}'
+    assert world.exception is not None, f'{world.exception}'
