@@ -7,20 +7,35 @@ Feature: Longest Common Prefix
 #  * strs[i] consists of only lower-case English letters.
 
   Scenario Outline: common prefix
-     Given an array of <words>
+     Given some <words>
       When I call longest_common_prefix
       Then find the longest common <prefix> string amongst an array of strings
   Examples:
-  |  words                       | prefix |
-  | ['flower', 'flow', 'flight'] | 'fl'   |
-  | ['']                         | ''     |
+  |       words            | prefix |
+  | flower, flow, flight   | fl     |
+  | dog, dove              | do     |
+  | dog, dove, duck        | d      |
+  | dog, duck              | d      |
+  | dove, duck             | d      |
+  | ''                     | ''     |
 
 
   Scenario Outline: no common prefix
-     Given an array of <words>
+     Given some <words>
       When I call longest_common_prefix
-      Then return an empty <prefix>
+      Then returns an empty string
   Examples:
-  |  words                       | prefix |
-  | ['dog', 'racecar', 'car']    | ''     |
-  | ['']                         | ''     |
+  |         words          |
+  | ''                     |
+  | flower, ''             |
+  | dog, racecar, car      |
+  | dog, dove, duck, zebra |
+
+
+  Scenario Outline: out of bounds
+    Given an array of invalid <strings>
+     Then log the exception
+  Examples:
+  |         strings        |
+  | !                      |
+  | !, @, #, ?             |
