@@ -30,4 +30,12 @@ Feature: Median of Two Sorted Arrays
   Examples:
   | array1 | m | array2 | n |    merged    | number(s)| median |  explaination  |
   | [1, 2] | 2 | [3, 4] | 2 | [1, 2, 3, 4] |  [2, 3]  |   2.5  | (2+3) /2 = 2.5 |
-# |   []   | 0 |   []   | 0 |      []      |   None   |  None  | No numbers     | # Negative test
+
+
+  Scenario Outline: out of bounds
+    Given two empty arrays <array1> and <array2>
+      And of size <m> and <n> respectively
+     Then handle the exception
+  Examples:
+  | array1 | m | array2 | n |    merged    | number(s)| median |  explaination  |
+  |   []   | 0 |   []   | 0 |      []      |   None   |  None  | No numbers     |

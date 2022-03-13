@@ -32,6 +32,12 @@ def validate_words(words):
     return True
 
 
+validate = {
+    'word' : validate_word,
+    'words': validate_words
+}
+
+
 def clean(word):
     return word.replace("''", '')
 
@@ -44,12 +50,9 @@ def parse(words):
     ]
 
 
-def log(exception):
-    print(exception)
-
-
 @before.each_example
 def before_example(scenario, outline, steps):
+    # FIXME remove ALL world key/values
     world.words = None
     world.result = None
     world.exception = None
@@ -58,14 +61,14 @@ def before_example(scenario, outline, steps):
 @step("some (?P<words>.+)")
 def step_impl(self, words):
     world.words = parse(words)
-    validate_words(world.words)
+    validate['words'](world.words)
 
 
 @step("an array of invalid (?P<strings>.+)")
 def step_impl(self, strings):
     strings = parse(strings)
     try:
-        validate_words(strings)
+        validate['words'](strings)
         world.words = strings
     except Exception as exception:
         world.exception = exception
@@ -88,6 +91,7 @@ def step_impl(self):
     assert world.result == prefix, f"expected:'{prefix}', got:'{world.result}'"
 
 
-@step("log the exception")
+@step("handle the exception")
 def step_impl(self):
     assert world.words is None, f'{world.words}'
+    assert world.exception is not None, f'{world.exception}'

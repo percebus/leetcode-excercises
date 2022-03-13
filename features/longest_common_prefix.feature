@@ -34,7 +34,7 @@ Feature: Longest Common Prefix
 
   Scenario Outline: out of bounds
     Given an array of invalid <strings>
-     Then log the exception
+     Then handle the exception
   Examples:
   |         strings        |
   | !                      |

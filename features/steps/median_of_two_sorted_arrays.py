@@ -1,4 +1,4 @@
-from aloe import step, world
+from aloe import before, step, world
 from test.utils import assert_is_in_range
 from problems.leetcode import median_of_two_sorted_arrays
 
@@ -22,6 +22,10 @@ def validate_lists(array1, array2):
     validate['m+n'](compound)
 
 
+def parse(array):
+    return eval(array)  # FIXME
+
+
 validate = {
     'm': lambda m: assert_is_in_range(m, constraints['m']),
     'm+n': lambda x: assert_is_in_range(x, constraints['m+n']),
@@ -30,10 +34,31 @@ validate = {
 }
 
 
+@before.each_example
+def before_example(scenario, outline, steps):
+    world.nums1 = None
+    world.nums2 = None
+    world.m = None
+    world.n= None
+    world.merged = None
+    world.actual = None
+
+
 @step("two sorted arrays (?P<array1>.+) and (?P<array2>.+)")
 def step_impl(self, array1, array2):
-    world.nums1 = eval(array1)
-    world.nums2 = eval(array2)
+    world.nums1 = parse(array1)
+    world.nums2 = parse(array2)
+    validate['lists'](world.nums1, world.nums2)
+
+
+@step("two empty arrays (?P<array1>.+) and (?P<array2>.+)")
+def step_impl(self, array1, array2):
+    world.nums1 = parse(array1)
+    world.nums2 = parse(array2)
+    try:
+        validate['lists'](world.nums1, world.nums2)
+    except Exception as exception:
+        world.exception = exception
 
 
 @step("of size (?P<m>.+) and (?P<n>.+) respectively")
@@ -42,7 +67,6 @@ def step_impl(self, m, n):
     world.n = int(n)
     validate['list'](world.nums1, world.m)
     validate['list'](world.nums2, world.n)
-    validate['lists'](world.nums1, world.nums2)
 
 
 @step("I call find_median")
@@ -52,5 +76,11 @@ def step_impl(self):
 
 @step("return the (?P<median>.+) of the two sorted arrays (?P<merged>.+)")
 def step_impl(self, median, merged):
-    world.merged = eval(merged)
+    world.merged = parse(merged)
     assert float(median) == world.actual, f'expected:{median}, got:{world.actual}'
+
+
+@step("handle the exception")
+def step_impl(self):
+    assert world.actual is None, f'{world.actual}'
+    assert world.exception is not None, f'{world.exception}'
