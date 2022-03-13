@@ -31,8 +31,8 @@ Feature: Palindrome Number
     |         123 | 321         | 123 != 321                                                                                                |
     |        -121 | 121-        | From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome. |
     |          10 | 01          | Reads 01 from right to left. Therefore it is not a palindrome.                                            |
-    | -2147483646 | 6463847412- | (-2 ** 31) +2                                                                                           |
-    |  2147483646 | 6463847412  |  (2 ** 31) -2                                                                                            |
+    | -2147483646 | 6463847412- | (-2 ** 31) +2                                                                                             |
+    |  2147483646 | 6463847412  |  (2 ** 31) -2                                                                                             |
 
 
   Scenario Outline: out of bounds
