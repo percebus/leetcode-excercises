@@ -1,23 +1,18 @@
 
-def create_filter(prefix):
-    return lambda word: word.startswith(prefix)
-
 
 # SRC: https://leetcode.com/problems/longest-common-prefix/
 #
 # Write a function to find the longest common prefix string amongst an array of strings.
 # If there is no common prefix, return an empty string "".
 def longest_common_prefix(words):
-    length = len(words)
     first_word = words[0]
     chars = list(first_word)
     prefix = ''
     result = prefix
     for char in chars:
         prefix += char
-        fn = create_filter(prefix)
-        filtered = list(filter(fn, words))
-        if len(filtered) == length:
+        invalid = next((word for word in words if not word.startswith(prefix)), None)
+        if invalid is None:
             result = prefix
         else:
             return result
