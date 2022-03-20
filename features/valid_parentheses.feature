@@ -52,8 +52,11 @@ Feature: Valid Parentheses
      Then determine that the input string is valid
   Examples:
   |            string           |
+  |  1+1                        |
   | (1+1)                       |
+  |  1 +1                       |
   | (1 +1)                      |
+  |  1 + 1                      |
   | (1 + 1)                     |
   | ((6+9) + (6x9))             |
   | [(1,2), (3,4), (5,6)]       |
