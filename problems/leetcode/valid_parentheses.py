@@ -7,10 +7,6 @@ brackets = {
 }
 
 
-# Given a string s containing just the characters
-# '(', ')', '{', '}', '[' and ']',
-# determine if the input string is valid.
-#
 # An input string is valid if:
 #  * Open brackets must be closed by the same type of brackets.
 #  * Open brackets must be closed in the correct order.
@@ -19,8 +15,10 @@ brackets = {
 def is_valid(string):
     opened = []  # TODO? use queue instead?
     for char in string:
+        # pylint: disable=consider-iterating-dictionary
         is_opening = char in brackets.keys()
         is_closing = char in brackets.values()
+        # pylint: enable=consider-iterating-dictionary
         if is_opening:
             opened.append(char)
         elif is_closing:
@@ -31,7 +29,7 @@ def is_valid(string):
                 return False
         else:
             pass  # any other char
-    return False if opened else True
+    return not opened
 
 
 def run(string, expected=None):
