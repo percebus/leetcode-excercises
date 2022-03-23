@@ -2,6 +2,7 @@ from pprint import pprint
 import string
 import more_itertools
 
+DEBUG = False
 
 def categorize(words, prefix=''):
     if len(words) == 1:
@@ -48,9 +49,11 @@ def pluck2(data):
     return more_itertools.collapse(results)
 
 
-def run(words, expected=None):
+def get_prefixes(words):
     data = categorize(words)
-    pprint(data)
+    if DEBUG:
+        pprint(data)
+
     # {
     #   'b': 'bananas',
     #   'd': {
@@ -63,13 +66,16 @@ def run(words, expected=None):
     # }
 
     # TODO benchmark pluck VS pluck2 performance
-    actual = list(pluck2(data))
+    return list(pluck2(data))
 
-    pprint(actual)
-    assert actual == expected
+
+def run(words, expected=None):
+    actual = get_prefixes(words)
+    assert actual == expected, f'expected:{expected}, got:{actual}'
 
 
 def run_all():
+    run([], expected=[])
     run(('dog', 'zebra', 'bananas'), expected=['b', 'd', 'z'])
     run(('dog', 'zebra', 'duck', 'bananas'), expected=['b', 'do', 'du', 'z'])
     run(('dog', 'zebra', 'duck', 'dove', 'bananas'), expected=['b', 'dog', 'dov', 'du', 'z'])
