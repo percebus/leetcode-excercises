@@ -2,7 +2,7 @@ Feature: Shortest Common Prefixes
 
   Scenario Outline: Same letter
      Given a list of <words>
-      When I call longest_common_prefixes
+      When I call shortest_common_prefixes
       Then find the shortest common <prefixes> strings amongst an array of strings
   Examples:
   |       words            |     prefixes     |
@@ -18,7 +18,7 @@ Feature: Shortest Common Prefixes
 
   Scenario Outline: Complex
      Given a list of <words>
-      When I call longest_common_prefixes
+      When I call shortest_common_prefixes
       Then find the shortest common <prefixes> strings amongst an array of strings
   Examples:
   |                words            |       prefixes     |
@@ -30,7 +30,7 @@ Feature: Shortest Common Prefixes
 
   Scenario Outline: FIXME Bugs
      Given a list of <words>
-      When I call longest_common_prefixes
+      When I call shortest_common_prefixes
       Then find the shortest common <prefixes> strings amongst an array of strings
   Examples:
   |       words          |   prefixes  |     expected     |

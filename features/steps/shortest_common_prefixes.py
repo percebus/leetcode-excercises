@@ -19,7 +19,7 @@ def step_impl(self, words):
     world.words = parse(words)
 
 
-@step("I call longest_common_prefixes")
+@step("I call shortest_common_prefixes")
 def step_impl(self):
     world.result = get_prefixes(world.words)
 
