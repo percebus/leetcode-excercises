@@ -11,5 +11,4 @@
 # --disable=W".
 disable=fixme,
         missing-docstring,
-        invalid-name,
-        too-many-function-args
+        invalid-name
