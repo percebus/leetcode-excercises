@@ -1,0 +1,87 @@
+# Assume that we need to calculate the median of a stream of numbers,
+# while repeatedly querying for the median of the numbers processed so far.
+# Write a class/procedures to accept integers as input and to obtain median
+# of numbers processed thus far.
+# 
+# MedianCalculator mc = new MedianCalculator();
+# mc.add(2); mc.add(1); mc.add(3);
+# mc.getMedian(); -> 2
+# mc.add(4);
+# mc.getMedian(); -> 2.5
+#
+#[1, 2, 3] # 2
+
+#[2, 4] # 2
+#[1, 2, 3, 4] # 2.5 << NO
+#[1.5, 3.5] # 2.5 >> YES
+
+#[1, 2, 3, 4, 5] # 3
+#[1.5, 3.5, 5] # 3.5
+
+
+
+numbers = []
+
+def is_valid(nums):
+    length = len(nums)
+    if (not length): return False
+    
+    if lentgh > 1:
+        return nums[0] < nums[1]
+
+
+def sort1(nums):
+    nums.sort()
+    return nums
+    
+
+def sort2(nums):
+    raise "implement me"
+
+
+def add_number1(x):
+    numbers.append(x)
+    return sort(numbers)
+
+
+def add_number2(x):
+    idx = 0
+    foreach _idx, y in numbers.items():
+        if y >= x:
+            idx = _idx 
+            break
+    numbers.insert(idx, x)
+    return numbers
+
+
+def get_median(nums3):
+    if not is_valid(nums3):
+        raise "invalid array, sorted it first"
+    
+    # nums3.sort()                # Assume QuickSort - O(n.log(n))
+    size = len(nums3)
+    mid = math.ceil(size / 2)
+    is_pair = (size % 2) == 0
+    idx = mid - 1
+
+    if is_pair is False:
+        return nums3[idx]
+
+    # implicit else
+    return (nums3[idx] + nums3[idx + 1]) / 2
+
+
+def process_number(x):
+    add_number1(x)
+    return get_median(numbers)
+
+
+
+numbers.append(2)
+numbers.append(1)
+numbers.append(3)
+_numbers = sort(numbers)
+get_median(_numbers)
+
+numbers.append(4)
+get_median(_numbers)
