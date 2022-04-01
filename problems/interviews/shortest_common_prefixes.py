@@ -2,7 +2,8 @@ from pprint import pprint
 import string
 import more_itertools
 
-DEBUG = False
+from problems.utils import DEBUG
+
 
 def categorize(words, prefix=''):
     if len(words) == 1:
