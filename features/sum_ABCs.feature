@@ -1,7 +1,7 @@
 Feature: ABCs
 
   # Constraints
-  # 1 < A, B, C < 100
+  #  * 1 < A, B, C < 100
 
   Scenario Outline: Positive Numbers
     Given three integers <A>, <B>, and <C>

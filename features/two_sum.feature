@@ -7,7 +7,7 @@ Feature: Two Sum
 #   * -109 <= target <= 109
 #   * Only one valid answer exists. # TODO TEST
 
-  Scenario Outline: only
+  Scenario Outline: _
      Given an <array> of integers nums
        And an integer <target> number
       When I call two_sum

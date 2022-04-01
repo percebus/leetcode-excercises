@@ -10,4 +10,6 @@
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
 disable=fixme,
-        missing-docstring
+        missing-docstring,
+        invalid-name,
+        too-many-function-args

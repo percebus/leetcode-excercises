@@ -6,7 +6,7 @@ Feature: Longest Common Prefix
 #  * 0 <= strs[i].length <= 200
 #  * strs[i] consists of only lower-case English letters.
 
-  Scenario Outline: common prefix
+  Scenario Outline: Common prefix
      Given some <words>
       When I call longest_common_prefix
       Then find the longest common <prefix> string amongst an array of strings
@@ -20,7 +20,7 @@ Feature: Longest Common Prefix
   | ''                     | ''     |
 
 
-  Scenario Outline: no common prefix
+  Scenario Outline: No common prefix
      Given some <words>
       When I call longest_common_prefix
       Then returns an empty string
@@ -32,7 +32,7 @@ Feature: Longest Common Prefix
   | dog, dove, duck, zebra |
 
 
-  Scenario Outline: out of bounds
+  Scenario Outline: Out of bounds
     Given an array of invalid <strings>
      Then handle the exception
   Examples:

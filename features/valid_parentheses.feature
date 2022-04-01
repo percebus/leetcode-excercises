@@ -10,7 +10,7 @@ Feature: Valid Parentheses
 #  * s consists of parentheses only '()[]{}' # XXX? What if I don't like this
 
 
-  Scenario Outline: invalid
+  Scenario Outline: Invalid
     Given a <string> containing the characters '(', ')', '{', '}', '[' and ']'
      When I run is_valid
      Then determine that the input string is NOT valid
@@ -29,7 +29,7 @@ Feature: Valid Parentheses
   |   {)   |
   |   {]   |
 
-  Scenario Outline: valid
+  Scenario Outline: Valid
     Given a <string> containing the characters '(', ')', '{', '}', '[' and ']'
      When I run is_valid
      Then determine that the input string is valid
@@ -46,7 +46,7 @@ Feature: Valid Parentheses
   | {([])} |
   | {[()]} |
 
-  Scenario Outline: valid w/ more characters
+  Scenario Outline: Valid w/ more characters
     Given a <string> containing the characters '(', ')', '{', '}', '[' and ']'
      When I run is_valid
      Then determine that the input string is valid
@@ -64,7 +64,7 @@ Feature: Valid Parentheses
   | {  a:  [ (1,2), (3,4) ]  }  |
 
 
-  Scenario Outline: invalid w/ more characters
+  Scenario Outline: Invalid w/ more characters
     Given a <string> containing the characters '(', ')', '{', '}', '[' and ']'
      When I run is_valid
      Then determine that the input string is NOT valid

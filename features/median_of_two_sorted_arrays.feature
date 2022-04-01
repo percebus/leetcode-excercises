@@ -9,7 +9,7 @@ Feature: Median of Two Sorted Arrays
 #  * 1 <= m + n <= 2000
 #  * -106 <= nums1[i], nums2[i] <= 106
 
-  Scenario Outline: odd-sized merged array
+  Scenario Outline: Odd-sized merged array
     Given two sorted arrays <array1> and <array2>
       And of size <m> and <n> respectively
      When I call find_median
@@ -21,7 +21,7 @@ Feature: Median of Two Sorted Arrays
   | [1, 2, 3, 4, 5] | 5 |   []   | 0 | [1, 2, 3, 4, 5] |    [3]    |      3 |
 
 
-  Scenario Outline: median of 2 numbers in an even-sized merged array
+  Scenario Outline: Median of 2 numbers in an even-sized merged array
     Given two sorted arrays <array1> and <array2>
       And of size <m> and <n> respectively
      When I call find_median
@@ -32,7 +32,7 @@ Feature: Median of Two Sorted Arrays
   | [1, 2] | 2 | [3, 4] | 2 | [1, 2, 3, 4] |  [2, 3]  |   2.5  | (2+3) /2 = 2.5 |
 
 
-  Scenario Outline: out of bounds
+  Scenario Outline: Out of bounds
     Given two empty arrays <array1> and <array2>
       And of size <m> and <n> respectively
      Then handle the exception
