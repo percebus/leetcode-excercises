@@ -11,4 +11,7 @@
 # --disable=W".
 disable=fixme,
         missing-docstring,
-        invalid-name
+        invalid-name,
+        duplicate-code,
+        wrong-import-order,
+        wrong-import-position

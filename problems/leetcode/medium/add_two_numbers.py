@@ -1,27 +1,8 @@
-
-# SRC: https://leetcode.com/problems/add-two-numbers/
-from problems.leetcode.list_node import ListNode
-
-
-def nodes_to_list(node: ListNode) -> list:
-    _node = node
-    array = []
-    while True:
-        num = int(_node.val)
-        array.append(num)
-        _node = _node.next
-        if _node is None:
-            return array
-
-
-def list_to_nodes(nums: list) -> ListNode:
-    inverted = nums[::-1]
-    prev_node = None
-    for item in inverted:
-        num = int(item)
-        node = ListNode(num, prev_node)
-        prev_node = node
-    return prev_node
+import os
+import sys
+path = os.path.abspath('.')
+sys.path.insert(1, path)
+from problems.leetcode.list_node import ListNode, list_to_nodes, nodes_to_list
 
 
 def process(node: ListNode) -> int:
@@ -31,6 +12,7 @@ def process(node: ListNode) -> int:
     return int(string)
 
 
+# SRC: https://leetcode.com/problems/add-two-numbers/
 def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
     num1 = process(l1)
     num2 = process(l2)
@@ -44,7 +26,7 @@ def test(list1, list2, expected=None):
     node1 = list_to_nodes(list1)
     node2 = list_to_nodes(list2)
     result = addTwoNumbers(node1, node2)
-    actual = str(nodes_to_list(result))
+    actual = str([int(num) for num in nodes_to_list(result)])
     _expected = str(expected)
     assert actual == _expected, f'expected:"{_expected}", got:"{actual}"'
 

@@ -1,7 +1,10 @@
+import os
+import sys
+path = os.path.abspath('.')
+sys.path.insert(1, path)
 from pprint import pprint
+from problems.utils import DEBUG
 
-# from problems.utils import DEBUG  # FIXME "No module named 'problems'"
-DEBUG = False
 
 P = 'P'  # photographer
 A = 'A'  # artist
@@ -63,7 +66,7 @@ def permute_scenarios(length: int, photos: list) -> list:
         for i in range(0, diff +1):
             left = [_ for idx in range(0, i)]
             right = [_ for idx in range(0, diff - i)]
-            if DEBUG is True:
+            if DEBUG:
                 pprint((left, photo, right))
 
             expanded = left + photo + right

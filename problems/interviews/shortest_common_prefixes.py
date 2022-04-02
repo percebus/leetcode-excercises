@@ -1,6 +1,10 @@
-from pprint import pprint
+import os
+import sys
 import string
 import more_itertools
+path = os.path.abspath('.')
+sys.path.insert(1, path)
+from pprint import pprint
 from problems.utils import DEBUG
 
 
