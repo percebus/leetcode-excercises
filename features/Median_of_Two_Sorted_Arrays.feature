@@ -35,7 +35,7 @@ Feature: Median of Two Sorted Arrays
   Scenario Outline: Out of bounds
     Given two empty arrays <array1> and <array2>
       And of size <m> and <n> respectively
-     Then handle the exception
+     Then handle the exception for two empty arrays
   Examples:
   | array1 | m | array2 | n |    merged    | number(s)| median |  explaination  |
   |   []   | 0 |   []   | 0 |      []      |   None   |  None  | No numbers     |

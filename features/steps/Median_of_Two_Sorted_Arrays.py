@@ -1,4 +1,4 @@
-from aloe import before, step, world
+from aloe import step, world
 from test.utils import assert_is_in_range
 from problems.leetcode import median_of_two_sorted_arrays
 
@@ -34,16 +34,6 @@ validate = {
 }
 
 
-@before.each_example
-def before_example(scenario, outline, steps):
-    world.nums1 = None
-    world.nums2 = None
-    world.m = None
-    world.n = None
-    world.merged = None
-    world.actual = None
-
-
 @step("two sorted arrays (?P<array1>.+) and (?P<array2>.+)")
 def step_impl(self, array1, array2):
     world.nums1 = parse(array1)
@@ -71,16 +61,15 @@ def step_impl(self, m, n):
 
 @step("I call find_median")
 def step_impl(self):
-    world.actual = median_of_two_sorted_arrays.find_median(world.nums1, world.nums2)
+    world.result = median_of_two_sorted_arrays.find_median(world.nums1, world.nums2)
 
 
 @step("return the (?P<median>.+) of the two sorted arrays (?P<merged>.+)")
 def step_impl(self, median, merged):
     world.merged = parse(merged)
-    assert float(median) == world.actual, f'expected:{median}, got:{world.actual}'
+    assert float(median) == world.result, f'expected:{median}, got:{world.result}'
 
 
-@step("handle the exception")
+@step("handle the exception for two empty arrays")
 def step_impl(self):
-    assert world.actual is None, f'{world.actual}'
-    assert world.exception is not None, f'{world.exception}'
+    assert isinstance(world.exception, Exception), f"expected:Exception, got:{world.exception}"

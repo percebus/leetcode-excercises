@@ -51,7 +51,6 @@ def step_impl(self):
     assert world.result is False
 
 
-@step("handle the exception")
+@step("handle the exception for the very large number")
 def step_impl(self):
-    assert world.actual is None, f'{world.actual}'
-    assert world.exception is not None, f'{world.exception}'
+    assert isinstance(world.exception, Exception), f"expected:Exception, got:{world.exception}"

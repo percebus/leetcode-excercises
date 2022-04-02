@@ -1,5 +1,4 @@
 from aloe import step, world
-
 from problems.meta.cafeteria import getMaxAdditionalDinersCount
 
 

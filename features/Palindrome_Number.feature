@@ -37,7 +37,7 @@ Feature: Palindrome Number
 
   Scenario Outline: Out of bounds
     Given an invalid integer number <x>
-     Then handle the exception
+     Then handle the exception for the very large number
   Examples:
     |      x      |     number    |
     |  2147483650 | ( 2 ** 31) +2 |

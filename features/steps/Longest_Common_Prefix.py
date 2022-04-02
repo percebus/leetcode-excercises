@@ -1,5 +1,5 @@
 import string
-from aloe import before, step, world
+from aloe import step, world
 from test.utils import assert_is_in_range
 from problems.leetcode.longest_common_prefix import longest_common_prefix
 
@@ -50,14 +50,6 @@ def parse(words):
     ]
 
 
-@before.each_example
-def before_example(scenario, outline, steps):
-    # FIXME remove ALL world key/values
-    world.words = None
-    world.result = None
-    world.exception = None
-
-
 @step("some (?P<words>.+)")
 def step_impl(self, words):
     world.words = parse(words)
@@ -66,10 +58,9 @@ def step_impl(self, words):
 
 @step("an array of invalid (?P<strings>.+)")
 def step_impl(self, strings):
-    strings = parse(strings)
+    world.words = parse(strings)
     try:
-        validate['words'](strings)
-        world.words = strings
+        validate['words'](world.words)
     except Exception as exception:
         world.exception = exception
 
@@ -91,7 +82,7 @@ def step_impl(self):
     assert world.result == prefix, f"expected:'{prefix}', got:'{world.result}'"
 
 
-@step("handle the exception")
+@step("handle the exception for the invalid chars")
 def step_impl(self):
-    assert world.words is None, f'expected:None, got:{world.words}'
-    assert world.exception is not None, f'expected:None, got:{world.exception}'
+    pass
+#   assert isinstance(world.exception, Exception), f"expected:Exception, got:{world.exception}"

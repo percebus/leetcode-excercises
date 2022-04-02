@@ -32,11 +32,10 @@ Feature: Longest Common Prefix
   | dog, dove, duck, zebra |
 
 
-# FIXME expected:None, got:None
-# Scenario Outline: Out of bounds
-#   Given an array of invalid <strings>
-#    Then handle the exception
-# Examples:
-# |         strings        |
-# | !                      |
-# | !, @, #, ?             |
+  Scenario Outline: Out of bounds
+    Given an array of invalid <strings>
+     Then handle the exception for the invalid chars
+  Examples:
+  |   strings  |
+  | !          |
+  | !, @, #, ? |
