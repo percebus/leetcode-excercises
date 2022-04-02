@@ -21,7 +21,8 @@ DIFF_METHOD = 'bounds2'
 #   * if the distance between the photographer and the actor is between X and Y cells (inclusive),
 #   * and the distance between the actor and the backdrop is also between X and Y cells (inclusive).
 #
-# Determine the number of different artistic photographs which could potentially be taken at the set.
+# Determine the number of different artistic photographs
+# which could potentially be taken at the set.
 # Two photographs are considered different if they involve
 #   * a different photographer cell,
 #   * actor cell,
@@ -40,7 +41,8 @@ _ = '.'  # space
 # But their expected result, assumes 0 distance?
 #
 # There is also this other line
-# "The distance between cells i and j is |i - j| (the absolute value of the difference between their indices)."
+# "The distance between cells i and j is |i - j|
+# (the absolute value of the difference between their indices)."
 def get_spacing(minimum: int, maximum: int):
     create_range = {
         'diff': lambda x, y: range(0, y - x + 1),

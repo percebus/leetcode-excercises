@@ -1,6 +1,6 @@
+from pprint import pprint
 import string
 import more_itertools
-from pprint import pprint
 from problems.utils import DEBUG
 
 
