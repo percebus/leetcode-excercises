@@ -1,6 +1,27 @@
 
 # SRC: https://leetcode.com/problems/add-two-numbers/
-from problems.leetcode.list_node import ListNode, nodes_to_list, list_to_nodes
+from problems.leetcode.list_node import ListNode
+
+
+def nodes_to_list(node: ListNode) -> list:
+    _node = node
+    array = []
+    while True:
+        num = int(_node.val)
+        array.append(num)
+        _node = _node.next
+        if _node is None:
+            return array
+
+
+def list_to_nodes(nums: list) -> ListNode:
+    inverted = nums[::-1]
+    prev_node = None
+    for item in inverted:
+        num = int(item)
+        node = ListNode(num, prev_node)
+        prev_node = node
+    return prev_node
 
 
 def process(node: ListNode) -> int:
