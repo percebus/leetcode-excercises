@@ -1,36 +1,6 @@
 
 # SRC: https://leetcode.com/problems/add-two-numbers/
-
-
-# pylint: disable=redefined-builtin
-# pylint: disable=too-few-public-methods
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-# pylint: enable=too-few-public-methods
-# pylint: enable=redefined-builtin
-
-
-def nodes_to_list(node: ListNode) -> list:
-    _node = node
-    array = []
-    while True:
-        num = int(_node.val)
-        array.append(num)
-        _node = _node.next
-        if _node is None:
-            return array
-
-
-def list_to_nodes(nums: list) -> ListNode:
-    inverted = nums[::-1]
-    prev_node = None
-    for item in inverted:
-        num = int(item)
-        node = ListNode(num, prev_node)
-        prev_node = node
-    return prev_node
+from problems.leetcode.list_node import ListNode, nodes_to_list, list_to_nodes
 
 
 def process(node: ListNode) -> int:
@@ -61,10 +31,10 @@ def test(list1, list2, expected=None):
 def test_all():
     # Example 1:
     #   Input:
-    #    * l1 = [2,4,3]
-    #    * l2 = [5,6,4]
-    #
-    #   Output: [7,0,8]
+    #    * l1 = [2,4,3] # 342
+    #    * l2 = [5,6,4] # 465 +
+    #                   # ------
+    #   Output: [7,0,8] # 807
     #
     #   Explanation: 342 + 465 = 807.
     test([2, 4, 3], [5, 6, 4], expected=[7, 0, 8])
@@ -79,10 +49,10 @@ def test_all():
 
     # Example 3:
     #   Input:
-    #    * l1 = [9,9,9,9,9,9,9]
-    #    * l2 = [9,9,9,9]
-    #
-    #   Output: [8,9,9,9,0,0,0,1]
+    #    * l1 = [9,9,9,9,9,9,9]   # 9999999
+    #    * l2 = [9,9,9,9]         #    9999 +
+    #                             # ---------
+    #   Output: [8,9,9,9,0,0,0,1] # 1009998
     test([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9], expected=[8, 9, 9, 9, 0, 0, 0, 1])
 
 
