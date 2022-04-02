@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.meta.cafeteria import getMaxAdditionalDinersCount
+from problems.meta.level1.cafeteria import getMaxAdditionalDinersCount
 
 
 @step("a number (?P<N>.+) of seats")

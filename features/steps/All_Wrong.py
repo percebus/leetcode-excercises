@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.meta.all_wrong import get_wrong_answers
+from problems.meta.warmup.all_wrong import get_wrong_answers
 
 
 @step("a multiple-choice test with (?P<N>.+) questions, numbered 1 to N")
