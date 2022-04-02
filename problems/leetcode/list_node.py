@@ -13,17 +13,19 @@ class ListNode:
 def nodes_to_list(node: ListNode) -> list:
     _node = node
     array = []
-    while True:
+    while _node is not None:
         array.append(_node.val)
         _node = _node.next
-        if _node is None:
-            return array
+
+    return array
 
 
 def list_to_nodes(nums: list) -> ListNode:
-    inverted = nums[::-1]
     prev_node = None
-    for item in inverted:
+    length = len(nums)
+    for idx in range(0, length):
+        item = nums[length - idx - 1]
         node = ListNode(item, prev_node)
         prev_node = node
+
     return prev_node
