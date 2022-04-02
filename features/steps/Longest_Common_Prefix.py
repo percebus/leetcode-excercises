@@ -93,5 +93,5 @@ def step_impl(self):
 
 @step("handle the exception")
 def step_impl(self):
-    assert world.words is None, f'{world.words}'
-    assert world.exception is not None, f'{world.exception}'
+    assert world.words is None, f'expected:None, got:{world.words}'
+    assert world.exception is not None, f'expected:None, got:{world.exception}'
