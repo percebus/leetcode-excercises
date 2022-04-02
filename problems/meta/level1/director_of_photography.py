@@ -15,29 +15,6 @@ def pretty_print(items: list) -> None:
     pprint(strings)
 
 
-# A photography set consists of N cells in a row, numbered from 1 to N in order,
-# and can be represented by a string C of length N.
-# Each cell i is one of the following types
-#
-# A photograph consists of
-#  * a photographer
-#  * an actor
-#  * and a backdrop
-#
-# Such that each of them is placed in a valid cell,
-# and such that the actor is between the photographer and the backdrop.
-# Such a photograph is considered artistic
-#   * if the distance between the photographer and the actor is between X and Y cells (inclusive),
-#   * and the distance between the actor and the backdrop is also between X and Y cells (inclusive).
-#
-# Determine the number of different artistic photographs
-# which could potentially be taken at the set.
-# Two photographs are considered different if they involve
-#   * a different photographer cell,
-#   * actor cell,
-#   * and/or backdrop cell.
-
-
 # NOTE the requirement is confusing.
 # It says "the distance between the photographer and the actor is between X and Y cells (inclusive)"
 #
