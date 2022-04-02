@@ -49,7 +49,7 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
     return list_to_nodes(inverted)
 
 
-def run(list1, list2, expected=None):
+def test(list1, list2, expected=None):
     node1 = list_to_nodes(list1)
     node2 = list_to_nodes(list2)
     result = addTwoNumbers(node1, node2)
@@ -58,7 +58,7 @@ def run(list1, list2, expected=None):
     assert actual == _expected, f'expected:"{_expected}", got:"{actual}"'
 
 
-def run_all():
+def test_all():
     # Example 1:
     #   Input:
     #    * l1 = [2,4,3]
@@ -67,7 +67,7 @@ def run_all():
     #   Output: [7,0,8]
     #
     #   Explanation: 342 + 465 = 807.
-    run([2, 4, 3], [5, 6, 4], expected=[7, 0, 8])
+    test([2, 4, 3], [5, 6, 4], expected=[7, 0, 8])
 
     # Example 2:
     #   Input:
@@ -75,7 +75,7 @@ def run_all():
     #    * l2 = [0]
     #
     #   Output: [0]
-    run([0], [0], expected=[0])
+    test([0], [0], expected=[0])
 
     # Example 3:
     #   Input:
@@ -83,8 +83,8 @@ def run_all():
     #    * l2 = [9,9,9,9]
     #
     #   Output: [8,9,9,9,0,0,0,1]
-    run([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9], expected=[8, 9, 9, 9, 0, 0, 0, 1])
+    test([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9], expected=[8, 9, 9, 9, 0, 0, 0, 1])
 
 
 if __name__ == '__main__':
-    run_all()
+    test_all()

@@ -69,17 +69,17 @@ def get_prefixes(words):
     return list(pluck2(data))
 
 
-def run(words, expected=None):
+def test(words, expected=None):
     actual = get_prefixes(words)
     assert actual == expected, f'expected:{expected}, got:{actual}'
 
 
-def run_all():
-    run([], expected=[])
-    run(('dog', 'zebra', 'bananas'), expected=['b', 'd', 'z'])
-    run(('dog', 'zebra', 'duck', 'bananas'), expected=['b', 'do', 'du', 'z'])
-    run(('dog', 'zebra', 'duck', 'dove', 'bananas'), expected=['b', 'dog', 'dov', 'du', 'z'])
+def test_all():
+    test([], expected=[])
+    test(('dog', 'zebra', 'bananas'), expected=['b', 'd', 'z'])
+    test(('dog', 'zebra', 'duck', 'bananas'), expected=['b', 'do', 'du', 'z'])
+    test(('dog', 'zebra', 'duck', 'dove', 'bananas'), expected=['b', 'dog', 'dov', 'du', 'z'])
 
 
 if __name__ == '__main__':
-    run_all()
+    test_all()

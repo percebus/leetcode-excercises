@@ -30,23 +30,23 @@ def summary_ranges(nums):
     return list(result)
 
 
-def run(nums, expected=None):
+def test(nums, expected=None):
     result = summary_ranges(nums)
     print(result)
     assert result == expected
 
 
-def run_all():
+def test_all():
     # Example:
     #  - Input: nums = [0,1,2,4,5,7]
     #  - Output: ["0->2","4->5","7"]
-    run([0, 1, 2, 4, 5, 7], expected=['0->2', '4->5', '7'])
+    test([0, 1, 2, 4, 5, 7], expected=['0->2', '4->5', '7'])
 
     # Example 2:
     # - Input: nums = [0, 2, 3, 4, 6, 8, 9]
     # - Output: ["0", "2->4", "6", "8->9"]
-    run([0, 2, 3, 4, 6, 8, 9], expected=['0', '2->4', '6', '8->9'])
+    test([0, 2, 3, 4, 6, 8, 9], expected=['0', '2->4', '6', '8->9'])
 
 
 if __name__ == '__main__':
-    run_all()
+    test_all()

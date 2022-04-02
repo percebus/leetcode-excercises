@@ -3,8 +3,17 @@ from pprint import pprint
 # from problems.utils import DEBUG  # FIXME "No module named 'problems'"
 DEBUG = False
 
-
+P = 'P'  # photographer
+A = 'A'  # artist
+B = 'B'  # backdrop
+_ = '.'  # space
 DIFF_METHOD = 'bounds2'
+
+
+def pretty_print(items: list) -> None:
+    strings = [''.join(item) for item in items]
+    pprint(strings)
+
 
 # A photography set consists of N cells in a row, numbered from 1 to N in order,
 # and can be represented by a string C of length N.
@@ -28,11 +37,6 @@ DIFF_METHOD = 'bounds2'
 #   * actor cell,
 #   * and/or backdrop cell.
 
-P = 'P'  # photographer
-A = 'A'  # artist
-B = 'B'  # backdrop
-_ = '.'  # space
-
 
 # NOTE the requirement is confusing.
 # It says "the distance between the photographer and the actor is between X and Y cells (inclusive)"
@@ -43,17 +47,18 @@ _ = '.'  # space
 # There is also this other line
 # "The distance between cells i and j is |i - j|
 # (the absolute value of the difference between their indices)."
-def get_spacing(minimum: int, maximum: int):
+def create_lambda():
     create_range = {
         'diff': lambda x, y: range(0, y - x + 1),
         'bounds': lambda x, y: range(x, y + 1),
         'bounds2': lambda x, y: range(x - 1, y)
     }
 
-    return create_range[DIFF_METHOD](minimum, maximum)
+    return create_range[DIFF_METHOD]
 
 
 def permute_artistic_photos(minimum: int, maximum: int) -> list:
+    get_spacing = create_lambda()
     photos = []
     for i in get_spacing(minimum, maximum):
         for j in get_spacing(minimum, maximum):
@@ -130,11 +135,6 @@ def expand_mask(mask:str) -> list:
     return filters
 
 
-def pretty_print(items: list) -> None:
-    strings = [''.join(item) for item in items]
-    pprint(strings)
-
-
 def get_artistic_photos(mask:str, minimum:int, maximum:int) -> list:
     photos = permute_artistic_photos(minimum, maximum)
     scenarios = permute_scenarios(len(mask), photos)
@@ -156,33 +156,40 @@ def getArtisticPhotographCount(N: int, C: str, X: int, Y: int) -> int:
     return len(valid_photos)
 
 
-def run(length:int, mask:str, minimium: int, maximum: int, expected: int) -> None:
+def run_large_sample():
+    photos = permute_artistic_photos(1, 90)
+    scenarios = permute_scenarios(200, photos)
+    pretty_print(scenarios)
+
+
+def test(length:int, mask:str, minimium: int, maximum: int, expected: int) -> None:
     result = getArtisticPhotographCount(length, mask, minimium, maximum)
     assert result == expected, f'expected:{expected}, got:{result}'
 
 
-def run_all():
+def test_all():
     # Sample test case #1
     # * N=5, C=APABA
     # * X=1, Y=2
     #
     # Expected Return Value = 1
-    run(5, 'APABA', 1, 2, expected=1)
+    test(5, 'APABA', 1, 2, expected=1)
 
     # Sample test case #2
     # * N=5, C=APABA
     # * X=2, Y=3
     #
     # Expected Return Value = 0
-    run(5, 'APABA', 2, 3, expected=0)
+    test(5, 'APABA', 2, 3, expected=0)
 
     # Sample test case #3
     # N=8, C=.PBAAP.B
     # X=1, Y=3
     #
     # Expected Return Value = 3
-    run(8, '.PBAAP.B', 1, 3, expected=3)
+    test(8, '.PBAAP.B', 1, 3, expected=3)
 
 
 if __name__ == '__main__':
-    run_all()
+    test_all()
+#   run_large_sample() # FIXME it takes 30s!
