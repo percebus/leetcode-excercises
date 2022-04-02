@@ -41,7 +41,7 @@ Feature: Roman to Integer
      When I run roman_to_int
      Then convert it to an <integer>
   Examples:
-    | numeral | integer |    explaination     |
+    | numeral | integer |     explanation     |
     | II      |       2 | 1 + 1               |
     | III     |       3 | 1 + 1 + 1           |
     | V       |       5 | 5                   |
@@ -60,7 +60,7 @@ Feature: Roman to Integer
      When I run roman_to_int
      Then convert it to an <integer>
   Examples:
-    | numeral | integer |               explaination                  |
+    | numeral | integer |                explanation                  |
     |  VI     |       6 | 5 + 1                                       |
     |  V      |       5 |                                             |
     | IV      |       4 | 'I' can be placed before 'V'  (5) to make 4 |
@@ -76,7 +76,7 @@ Feature: Roman to Integer
      When I run roman_to_int
      Then convert it to an <integer>
   Examples:
-    | numeral | integer |            explaination                       |
+    | numeral | integer |                explanation                    |
     |  LX     |      60 | 50 + 10                                       |
     |  L      |      50 | 50                                            |
     | XL      |      40 | 'X' can be placed before 'L'  (50) to make 40 |
@@ -92,7 +92,7 @@ Feature: Roman to Integer
      When I run roman_to_int
      Then convert it to an <integer>
   Examples:
-    | numeral | integer |            explaination                         |
+    | numeral | integer |               explanation                       |
     |  DC     |     600 | 500 + 100                                       |
     |  D      |     500 |                                                 |
     | CD      |     400 | 'C' can be placed before 'D'  (500) to make 400 |

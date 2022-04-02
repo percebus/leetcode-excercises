@@ -1,7 +1,8 @@
 Feature: ABCs
-
+  # SRC: https://www.facebookrecruiting.com/portal/coding_puzzles/?puzzle=513411323351554
+  #
   # Constraints
-  #  * 1 < A, B, C < 100
+  #  * 1 ≤ A,B,C ≤ 100
 
   Scenario Outline: Positive Numbers
     Given three integers <A>, <B>, and <C>

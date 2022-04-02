@@ -6,7 +6,7 @@ DEBUG = False
 P = 'P'  # photographer
 A = 'A'  # artist
 B = 'B'  # backdrop
-_ = '.'  # space
+_ = '.'  # space  # FIXME find a better char. '_' blends them together
 DIFF_METHOD = 'bounds2'
 
 
@@ -150,6 +150,10 @@ def test_all():
     # * X=1, Y=2
     #
     # Expected Return Value = 1
+    # Explanation:
+    # The absolute distances between photographer/actor and actor/backdrop must be between 1 and 2.
+    # The only possible photograph that can be taken is with the 3 middle cells,
+    # and it happens to be artistic.
     test(5, 'APABA', 1, 2, expected=1)
 
     # Sample test case #2
@@ -157,6 +161,10 @@ def test_all():
     # * X=2, Y=3
     #
     # Expected Return Value = 0
+    # Explanation:
+    # he only possible photograph is again taken with the 3 middle cells.
+    # However, as the distance requirement is between 2 and 3,
+    # it is not possible to take an artistic photograph.
     test(5, 'APABA', 2, 3, expected=0)
 
     # Sample test case #3
@@ -164,6 +172,11 @@ def test_all():
     # X=1, Y=3
     #
     # Expected Return Value = 3
+    # Explanation
+    #  | .P.A...B | <<  the artist and backdrop exceed the maximum distance of 3.
+    #  | .P..A..B |
+    #  | ..BA.P.. |
+    #  | ..B.AP.. |
     test(8, '.PBAAP.B', 1, 3, expected=3)
 
 

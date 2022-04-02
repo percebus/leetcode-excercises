@@ -1,4 +1,6 @@
 Feature: Director of Photography
+  # SRC: https://www.facebookrecruiting.com/portal/coding_puzzles/?puzzle=870874083549040
+  #
   # A photography set consists of N cells in a row, numbered from 1 to N in order,
   # and can be represented by a string C of length N.
   # Each cell i is one of the following types
@@ -20,6 +22,10 @@ Feature: Director of Photography
   #   * a different photographer cell,
   #   * actor cell,
   #   * and/or backdrop cell.
+  #
+  # Constraints
+  #  * 1         ≤ N ≤ 200
+  #  * 1 ≤ X ≤ Y ≤ N
 
 
   Scenario Outline: Short samples

@@ -28,7 +28,7 @@ Feature: Median of Two Sorted Arrays
      Then return the <median> of the two sorted arrays <merged>
 #     And the overall run time complexity should be O(log (m+n)) # TODO
   Examples:
-  | array1 | m | array2 | n |    merged    | number(s)| median |  explaination  |
+  | array1 | m | array2 | n |    merged    | number(s)| median |   explanation  |
   | [1, 2] | 2 | [3, 4] | 2 | [1, 2, 3, 4] |  [2, 3]  |   2.5  | (2+3) /2 = 2.5 |
 
 
@@ -37,5 +37,5 @@ Feature: Median of Two Sorted Arrays
       And of size <m> and <n> respectively
      Then handle the exception for two empty arrays
   Examples:
-  | array1 | m | array2 | n |    merged    | number(s)| median |  explaination  |
-  |   []   | 0 |   []   | 0 |      []      |   None   |  None  | No numbers     |
+  | array1 | m | array2 | n |    merged    | number(s)| median | explanation |
+  |   []   | 0 |   []   | 0 |      []      |   None   |  None  | No numbers  |

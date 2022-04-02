@@ -13,7 +13,7 @@ Feature: Palindrome Number
      When I run is_palindrome
      Then return True if x is palindrome integer
   Examples:
-    |    x  | mirrored |                 explaination                                |
+    |    x  | mirrored |                  explanation                                |
     |     1 | 1        |     1 == 1                                                  |
     |   121 | 121      | 121 reads as 121 from left to right and from right to left. |
     |  1221 | 1221     |  1221 == 1221                                               |
@@ -25,7 +25,7 @@ Feature: Palindrome Number
      When I run is_palindrome
      Then return False if x is NOT palindrome integer
   Examples:
-    |      x      |   mirrored  |                                        explaination                                                       |
+    |      x      |   mirrored  |                                         explanation                                                       |
     |          -1 | 1-          |  -1 != 1-                                                                                                 |
     |          12 | 21          |  12 != 21                                                                                                 |
     |         123 | 321         | 123 != 321                                                                                                |
