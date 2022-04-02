@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.leetcode.valid_parentheses import is_valid
+from problems.leetcode.easy.valid_parentheses import is_valid
 
 
 @step("a (?P<string>.+) containing the characters '\(', '\)', '\{', '\}', '\[' and '\]'")

@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.leetcode.reverse_string import reverseString
+from problems.leetcode.easy.reverse_string import reverseString
 
 
 @step("an array of (?P<chars>.+)")

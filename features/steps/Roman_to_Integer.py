@@ -1,6 +1,6 @@
 from aloe import step, world
 from test.utils import assert_is_in_range
-from problems.leetcode.roman_to_integer import roman_to_int
+from problems.leetcode.easy.roman_to_integer import roman_to_int
 
 
 constraints = {

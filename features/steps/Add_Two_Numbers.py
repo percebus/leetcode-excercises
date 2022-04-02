@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.leetcode.add_two_numbers import addTwoNumbers, list_to_nodes, nodes_to_list
+from problems.leetcode.medium.add_two_numbers import addTwoNumbers, list_to_nodes, nodes_to_list
 
 
 def to_list(string):

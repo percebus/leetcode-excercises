@@ -1,7 +1,6 @@
 from aloe import step, world
 from test.utils import assert_is_in_range
-from problems.leetcode import median_of_two_sorted_arrays
-
+from problems.leetcode.hard import median_of_two_sorted_arrays
 
 constraints = {
     'm'  : {'min': 0, 'max': 1000},  # 0 <=   m   <= 1000

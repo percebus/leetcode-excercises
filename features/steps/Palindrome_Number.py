@@ -1,7 +1,6 @@
 from aloe import step, world
 from test.utils import assert_is_in_range
-from problems.leetcode import palindrome_number
-
+from problems.leetcode.easy import palindrome_number
 
 constraints = {
     'value': {  # -2^31 <= x <= 2^31 -1
