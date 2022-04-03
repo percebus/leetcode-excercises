@@ -1,7 +1,7 @@
 
 
-def compare_strings(a, b):
-    return a if len(a) >= len(b) else b
+# def compare_strings(a, b):
+#     return a if len(a) >= len(b) else b
 
 
 # SRC: https://www.mygreatlearning.com/blog/palindrome-in-python/#palindrome-string
@@ -24,7 +24,8 @@ is_palindrome_methods = {
 is_palindrome = is_palindrome_methods[METHOD]
 
 
-# DEBUG ONLY
+# My 1st approach
+#
 # def get_all_palindromes(string: str) -> set:
 #     chars = list(string)
 #     palindromes = set(chars)
@@ -38,6 +39,44 @@ is_palindrome = is_palindrome_methods[METHOD]
 #                 palindromes.add(word)
 #
 #     return palindromes
+#
+#
+# def get_longest_palindrome_filtering(string: str) -> set:
+#    palindromes = get_all_palindromes(s)
+#    return max(palindromes, key=len)
+
+
+# My 2nd approach
+#
+# def get_longest_palindrome_increasing(string: str) -> str:
+#     if is_palindrome(string):
+#         return string
+#
+#     chars = list(string)
+#     length = len(string)
+#     palindrome = ''
+#     for i, char_i in enumerate(string):
+#         word = char_i
+#         palindrome = compare_strings(palindrome, word)
+#         for j in range(i + 1, length):
+#             char_j = chars[j]
+#             word += char_j
+#             if is_palindrome(word):
+#                 palindrome = compare_strings(palindrome, word)
+#
+#     return palindrome
+
+
+# My 3nd approach
+def get_longest_palindrome_decreasing(string: str) -> str:
+    length = len(string)
+    for i in range(0, length):
+        diff = length - i
+        for j in range(0, i + 1):
+            substring = string[j:diff + j]
+            if is_palindrome(substring):
+                return substring
+    return ''
 
 
 # SRC: https://leetcode.com/problems/longest-palindromic-substring/
@@ -47,25 +86,7 @@ def longestPalindrome(s: str) -> str:
     :type s: str
     :rtype: str
     """
-    # palindromes = get_all_palindromes(s)
-    # return max(palindromes, key=len)
-    string = s
-    if is_palindrome(string):
-        return string
-
-    chars = list(string)
-    length = len(string)
-    palindrome = ''
-    for i, char_i in enumerate(string):
-        word = char_i
-        palindrome = compare_strings(palindrome, word)
-        for j in range(i + 1, length):
-            char_j = chars[j]
-            word += char_j
-            if is_palindrome(word):
-                palindrome = compare_strings(palindrome, word)
-
-    return palindrome
+    return get_longest_palindrome_decreasing(s)
 
 
 def test(string: str, expected: str = None):
