@@ -32,8 +32,8 @@ def summary_ranges(nums):
 
 def test(nums, expected=None):
     result = summary_ranges(nums)
-    print(result)
     assert result == expected
+    print('.', end='')
 
 
 def test_all():
@@ -46,6 +46,8 @@ def test_all():
     # - Input: nums = [0, 2, 3, 4, 6, 8, 9]
     # - Output: ["0", "2->4", "6", "8->9"]
     test([0, 2, 3, 4, 6, 8, 9], expected=['0', '2->4', '6', '8->9'])
+
+    print('\n')
 
 
 if __name__ == '__main__':

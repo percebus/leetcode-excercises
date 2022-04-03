@@ -29,6 +29,7 @@ def test(list1, list2, expected=None):
     actual = str([int(num) for num in nodes_to_list(result)])
     _expected = str(expected)
     assert actual == _expected, f'expected:"{_expected}", got:"{actual}"'
+    print('.', end='')
 
 
 def test_all():
@@ -57,6 +58,8 @@ def test_all():
     #                             # ---------
     #   Output: [8,9,9,9,0,0,0,1] # 1009998
     test([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9], expected=[8, 9, 9, 9, 0, 0, 0, 1])
+
+    print('\n')
 
 
 if __name__ == '__main__':

@@ -22,6 +22,7 @@ def longest_common_prefix(words):
 def test(words, expected=None):
     result = longest_common_prefix(words)
     assert result == expected, f'expected:"{expected}", got:"{result}"'
+    print('.', end='')
 
 
 def test_all():
@@ -39,6 +40,8 @@ def test_all():
     test(["dog", "racecar", "car"], expected="")
 
     test([""], expected="")
+
+    print('\n')
 
 
 if __name__ == '__main__':

@@ -26,8 +26,8 @@ def two_sum(nums, target):
 
 def test(nums, target, expected=None):
     result = two_sum(nums, target)
-    print(result)
     assert result == expected
+    print('.', end='')
 
 
 def test_all():
@@ -46,6 +46,8 @@ def test_all():
     # - Input: nums = [3,3], target = 6
     # - Output: [0,1]
     test([3, 3], 6, expected=[0, 1])
+
+    print('\n')
 
 
 if __name__ == '__main__':

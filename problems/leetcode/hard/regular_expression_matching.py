@@ -22,6 +22,7 @@ def isMatch(s: str, p: str) -> bool:
 def test(string: str, pattern: str, expected: bool = None):
     result = isMatch(string, pattern)
     assert result is expected, f'expected:{expected}, got:{result}'
+    print('.', end='')
 
 
 def test_all():
@@ -47,6 +48,8 @@ def test_all():
     test('ab', '.*', expected=True)
 
     test('aab', 'c*a*b', expected=True)
+
+    print('\n')
 
 
 if __name__ == '__main__':

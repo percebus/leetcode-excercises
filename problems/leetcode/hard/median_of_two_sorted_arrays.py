@@ -24,8 +24,8 @@ def find_median(nums1, nums2):
 
 def test(nums1, nums2, expected=None):
     result = find_median(nums1, nums2)
-    print(result)
     assert result == expected
+    print('.', end='')
 
 
 def test_all():
@@ -42,6 +42,8 @@ def test_all():
     test([1, 2], [3, 4], expected=2.5)
 
     test([1, 2, 3, 4, 5], [], expected=3)
+
+    print('\n')
 
 
 if __name__ == '__main__':

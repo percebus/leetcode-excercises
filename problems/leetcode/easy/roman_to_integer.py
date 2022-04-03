@@ -25,14 +25,14 @@ def roman_to_int(string):
         if values[idx] < values[idx + 1]:
             values[idx] = value * -1
 
-    print(values)
+#   print(values) # DEBUG only
     return sum(values)
 
 
 def test(string, expected=None):
     result = roman_to_int(string)
-    print(result)
     assert result == expected
+    print('.', end='')
 
 
 def test_all():
@@ -53,6 +53,8 @@ def test_all():
     #  * Output: 1994
     #  * Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
     test('MCMXCIV', expected=1994)
+
+    print('\n')
 
 
 if __name__ == '__main__':

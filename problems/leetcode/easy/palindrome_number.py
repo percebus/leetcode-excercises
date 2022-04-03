@@ -13,8 +13,9 @@ def is_palindrome(number):
 
 def test(number, expected=None):
     result = is_palindrome(number)
-    print(f'{number}: {result}')
+#   print(f'{number}: {result}') # DEBUG only
     assert result == expected
+    print('.', end='')
 
 
 def test_all():
@@ -37,6 +38,8 @@ def test_all():
     # Output: false
     # Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
     test(10, expected=False)
+
+    print('\n')
 
 
 if __name__ == '__main__':

@@ -16,6 +16,7 @@ def test(chars, expected=None):
     reverseString(chars)
     actual = ''.join(chars)
     assert actual == ''.join(expected), f'expected{expected}, got:{chars}'
+    print('.', end='')
 
 
 def test_all():
@@ -28,6 +29,8 @@ def test_all():
     # Input: s = ['H', 'a', 'n', 'n', 'a', 'h']
     # Output: ['h', 'a', 'n', 'n', 'a', 'H']
     test(['H', 'a', 'n', 'n', 'a', 'h'], expected=['h', 'a', 'n', 'n', 'a', 'H'])
+
+    print('\n')
 
 
 if __name__ == '__main__':

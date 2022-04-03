@@ -35,6 +35,7 @@ def is_valid(string):
 def test(string, expected=None):
     result = is_valid(string)
     assert result == expected, f"'{string}'.- expected:{expected}, got:{result}"
+    print('.', end='')
 
 
 def test_all():
@@ -57,6 +58,8 @@ def test_all():
     #  * Input: s = "["
     #  * Output: false
     test('[', expected=False)
+
+    print('\n')
 
 
 if __name__ == '__main__':

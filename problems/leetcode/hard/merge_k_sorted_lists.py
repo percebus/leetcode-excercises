@@ -15,22 +15,28 @@ def mergeKLists(lists: list):
     :type lists: List[ListNode]
     :rtype: ListNode
     """
+    if not lists:
+        return None
+
+    if len(lists) == 1:
+        return lists[0]
+
     _lists = map(nodes_to_list, lists)
     flattened = [
         item
         for array in _lists
-        for item in array
-    ]
+        for item in array]
     flattened.sort()
     return list_to_nodes(flattened)
 
 
 def test(lists: list, expected: list = None):
-    collections = map(list_to_nodes, lists)
+    collections = list(map(list_to_nodes, lists))
     result = mergeKLists(collections)
     actual = str(nodes_to_list(result))
     _expected = str(expected)
     assert actual == _expected, f'expected:{expected}, got:{actual}'
+    print('.', end='')
 
 
 def test_all():
@@ -59,6 +65,8 @@ def test_all():
     # Input: lists = [[]]
     # Output: []
     test([[]], expected=[])
+
+    print('\n')
 
 
 if __name__ == '__main__':
