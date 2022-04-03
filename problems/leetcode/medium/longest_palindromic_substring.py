@@ -50,6 +50,9 @@ def longestPalindrome(s: str) -> str:
     # palindromes = get_all_palindromes(s)
     # return max(palindromes, key=len)
     string = s
+    if is_palindrome(string):
+        return string
+
     chars = list(string)
     length = len(string)
     palindrome = ''
