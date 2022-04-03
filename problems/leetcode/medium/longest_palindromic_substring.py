@@ -1,21 +1,34 @@
 
 
 # SRC: https://www.mygreatlearning.com/blog/palindrome-in-python/#palindrome-string
-def is_palindrome_iterative(string: str) -> bool:
+def is_palindrome_for(string: str) -> bool:
     length = len(string)
     for idx in range(0, int(length / 2)):
         char_a = string[idx]
         char_b = string[length - idx - 1]
         if char_a != char_b:
             return False
-
     return True
 
 
-METHOD = 'iterative'
+# https://medium.com/interview-buddy/palindrome-python-interview-problems-6a684a4cbdbe
+def is_palindrome_while(string: str) -> bool:
+    length = len(string)
+    start = 0
+    end = length -1
+    while start < end:
+        if string[start] != string[end]:
+            return False
+        start += 1
+        end -= 1
+    return True
+
+
+METHOD = 'for'
 is_palindrome_methods = {
     'reverse': lambda string: string == string[::-1],
-    'iterative': is_palindrome_iterative
+    'for': is_palindrome_for,
+    'while': is_palindrome_while
 }
 is_palindrome = is_palindrome_methods[METHOD]
 
