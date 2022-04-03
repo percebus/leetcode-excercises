@@ -33,7 +33,7 @@ def summary_ranges(nums):
 def test(nums, expected=None):
     result = summary_ranges(nums)
     assert result == expected
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

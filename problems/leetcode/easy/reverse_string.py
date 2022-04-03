@@ -16,7 +16,7 @@ def test(chars, expected=None):
     reverseString(chars)
     actual = ''.join(chars)
     assert actual == ''.join(expected), f'expected{expected}, got:{chars}'
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

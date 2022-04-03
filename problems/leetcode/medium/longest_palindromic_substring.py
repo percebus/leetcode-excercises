@@ -24,19 +24,20 @@ is_palindrome_methods = {
 is_palindrome = is_palindrome_methods[METHOD]
 
 
-def get_all_palindromes(string: str) -> list:
-    chars = list(string)
-    palindromes = set(chars)
-    length = len(string)
-    for i, char_i in enumerate(string):
-        word = char_i
-        for j in range(i + 1, length):
-            char_j = chars[j]
-            word += char_j
-            if is_palindrome(word):
-                palindromes.add(word)
-
-    return palindromes
+# DEBUG ONLY
+# def get_all_palindromes(string: str) -> set:
+#     chars = list(string)
+#     palindromes = set(chars)
+#     length = len(string)
+#     for i, char_i in enumerate(string):
+#         word = char_i
+#         for j in range(i + 1, length):
+#             char_j = chars[j]
+#             word += char_j
+#             if is_palindrome(word):
+#                 palindromes.add(word)
+#
+#     return palindromes
 
 
 # SRC: https://leetcode.com/problems/longest-palindromic-substring/
@@ -64,9 +65,10 @@ def longestPalindrome(s: str) -> str:
     return palindrome
 
 
-def test(string: str, expected: str=None):
+def test(string: str, expected: str = None):
     result = longestPalindrome(string)
-    assert result  == expected, f'expected:{expected}, got:{result}'
+    assert result == expected, f'expected:{expected}, got:{result}'
+    print('✅', end='')
 
 
 def test_all():
@@ -104,6 +106,8 @@ def test_all():
         'esbtzjaaijqkgmtaajpsdfiqtvxsgfvijpxrvxgfumsuprzlyvhclgkhccmcnquukivlpnjlfteljvykbddtrpmxzcrdqinsnlsteonhcegtkoszzonkwjevlasgjlcquzuhdmmkhfniozhuphcfkeobturbuoefhmtgcvhlsezvkpgfebbdbhiuwdcftenihseorykdguoqotqyscwymtjejpdzqepjkadtftzwebxwyuqwyeegwxhroaaymusddwnjkvsvrwwsmolmidoybsotaqufhepinkkxicvzrgbgsarmizugbvtzfxghkhthzpuetufqvigmyhmlsgfaaqmmlblxbqxpluhaawqkdluwfirfngbhdkjjyfsxglsnakskcbsyafqpwmwmoxjwlhjduayqyzmpkmrjhbqyhongfdxmuwaqgjkcpatgbrqdllbzodnrifvhcfvgbixbwywanivsdjnbrgskyifgvksadvgzzzuogzcukskjxbohofdimkmyqypyuexypwnjlrfpbtkqyngvxjcwvngmilgwbpcsseoywetatfjijsbcekaixvqreelnlmdonknmxerjjhvmqiztsgjkijjtcyetuygqgsikxctvpxrqtuhxreidhwcklkkjayvqdzqqapgdqaapefzjfngdvjsiiivnkfimqkkucltgavwlakcfyhnpgmqxgfyjziliyqhugphhjtlllgtlcsibfdktzhcfuallqlonbsgyyvvyarvaxmchtyrtkgekkmhejwvsuumhcfcyncgeqtltfmhtlsfswaqpmwpjwgvksvazhwyrzwhyjjdbphhjcmurdcgtbvpkhbkpirhysrpcrntetacyfvgjivhaxgpqhbjahruuejdmaghoaquhiafjqaionbrjbjksxaezosxqmncejjptcksnoq',
         expected='yvvy')
     # pylint: enable=line-too-long
+
+    print('\n')
 
 
 if __name__ == '__main__':

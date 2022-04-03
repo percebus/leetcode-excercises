@@ -22,7 +22,7 @@ def longest_common_prefix(words):
 def test(words, expected=None):
     result = longest_common_prefix(words)
     assert result == expected, f'expected:"{expected}", got:"{result}"'
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

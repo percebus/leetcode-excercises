@@ -32,7 +32,7 @@ def roman_to_int(string):
 def test(string, expected=None):
     result = roman_to_int(string)
     assert result == expected
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

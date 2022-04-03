@@ -29,7 +29,7 @@ def test(list1, list2, expected=None):
     actual = str([int(num) for num in nodes_to_list(result)])
     _expected = str(expected)
     assert actual == _expected, f'expected:"{_expected}", got:"{actual}"'
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

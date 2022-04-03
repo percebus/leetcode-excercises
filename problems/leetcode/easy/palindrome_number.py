@@ -15,7 +15,7 @@ def test(number, expected=None):
     result = is_palindrome(number)
 #   print(f'{number}: {result}') # DEBUG only
     assert result == expected
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

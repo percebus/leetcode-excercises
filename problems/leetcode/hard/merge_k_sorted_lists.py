@@ -36,7 +36,7 @@ def test(lists: list, expected: list = None):
     actual = str(nodes_to_list(result))
     _expected = str(expected)
     assert actual == _expected, f'expected:{expected}, got:{actual}'
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

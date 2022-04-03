@@ -22,7 +22,7 @@ def isMatch(s: str, p: str) -> bool:
 def test(string: str, pattern: str, expected: bool = None):
     result = isMatch(string, pattern)
     assert result is expected, f'expected:{expected}, got:{result}'
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

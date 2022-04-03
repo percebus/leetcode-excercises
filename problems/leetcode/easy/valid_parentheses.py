@@ -35,7 +35,7 @@ def is_valid(string):
 def test(string, expected=None):
     result = is_valid(string)
     assert result == expected, f"'{string}'.- expected:{expected}, got:{result}"
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

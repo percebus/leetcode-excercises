@@ -27,7 +27,7 @@ def two_sum(nums, target):
 def test(nums, target, expected=None):
     result = two_sum(nums, target)
     assert result == expected
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():

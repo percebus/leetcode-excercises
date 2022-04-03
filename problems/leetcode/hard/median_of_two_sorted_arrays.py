@@ -25,7 +25,7 @@ def find_median(nums1, nums2):
 def test(nums1, nums2, expected=None):
     result = find_median(nums1, nums2)
     assert result == expected
-    print('.', end='')
+    print('✅', end='')
 
 
 def test_all():
