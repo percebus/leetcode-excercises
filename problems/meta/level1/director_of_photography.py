@@ -29,7 +29,7 @@ def pretty_print(items: list) -> None:
 # (the absolute value of the difference between their indices)."
 def create_lambda():
     create_range = {
-        'diff': lambda x, y: range(0, y - x + 1),
+        'diff': lambda x, y: range(y - x + 1),
         'bounds': lambda x, y: range(x, y + 1),
         'bounds2': lambda x, y: range(x - 1, y)
     }
@@ -43,7 +43,7 @@ def permute_artistic_photos(minimum: int, maximum: int) -> list:
     for i in get_spacing(minimum, maximum):
         for j in get_spacing(minimum, maximum):
             length = i + j + 1  # actor
-            array = [_ for idx in range(0, length)]
+            array = [_ for idx in range(length)]
             array.insert(0, P)
             array[i + 1] = A
             array.append(B)
@@ -63,9 +63,9 @@ def permute_scenarios(length: int, photos: list) -> list:
     for photo in photos:
         _len = len(photo)
         diff = length - _len
-        for i in range(0, diff +1):
-            left = [_ for idx in range(0, i)]
-            right = [_ for idx in range(0, diff - i)]
+        for i in range(diff +1):
+            left = [_ for idx in range(i)]
+            right = [_ for idx in range(diff - i)]
             if DEBUG:
                 pprint((left, photo, right))
 
@@ -105,7 +105,7 @@ def expand_mask(mask:str) -> list:
                 if (p < a) and (b < a):
                     continue
 
-                array = [_ for idx in range(0, len(chars))]
+                array = [_ for idx in range(len(chars))]
                 array[p] = P
                 array[a] = A
                 array[b] = B

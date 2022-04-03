@@ -9,7 +9,7 @@ UNAVAILABLE = 'X'
 
 
 def get_current_seats(total:int, distance:int, occupied: List[int]):
-    seats = [AVAILABLE for i in range(0, total)]
+    seats = [AVAILABLE for i in range(total)]
     length = len(seats)
     for seat in occupied:  # [2, 4, 6]
         idx = seat - 1

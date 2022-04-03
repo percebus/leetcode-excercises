@@ -23,7 +23,7 @@ def nodes_to_list(node: ListNode) -> list:
 def list_to_nodes(nums: list) -> ListNode:
     prev_node = None
     length = len(nums)
-    for idx in range(0, length):
+    for idx in range(length):
         item = nums[length - idx - 1]
         node = ListNode(item, prev_node)
         prev_node = node
