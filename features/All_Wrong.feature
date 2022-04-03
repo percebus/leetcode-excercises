@@ -20,5 +20,18 @@ Feature: All Wrong
   Examples:
 # |   |     answers     |
   | N | correct | wrong |
+  | 1 | A       | B     |
+  | 1 | B       | A     |
+  | 2 | AA      | BB    |
+  | 2 | AB      | BA    |
+  | 2 | BA      | AB    |
+  | 2 | BB      | AA    |
+  | 3 | AAA     | BBB   |
   | 3 | ABA     | BAB   |
+  | 3 | AAB     | BBA   |
+  | 3 | ABB     | BAA   |
+  | 3 | BBB     | AAA   |
+  | 3 | BAB     | ABA   |
+  | 3 | BAA     | ABB   |
   | 5 | BBBBB   | AAAAA |
+  | 5 | AAAAA   | BBBBB |
