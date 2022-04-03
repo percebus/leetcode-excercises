@@ -29,8 +29,8 @@ def are_they_similar(array_a: list, array_b: list) -> bool:
         for j in range(i + 1, lenght_b):
             mid = array_b[i: j + 1]
             right = array_b[j + 1: lenght_b]
-            reversed = mid[::-1]
-            new_array = left + reversed + right
+            inverted = mid[::-1]
+            new_array = left + inverted + right
             if array_a == new_array:
                 return True
 
