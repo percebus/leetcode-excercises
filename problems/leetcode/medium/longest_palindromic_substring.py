@@ -1,9 +1,5 @@
 
 
-# def compare_strings(a, b):
-#     return a if len(a) >= len(b) else b
-
-
 # SRC: https://www.mygreatlearning.com/blog/palindrome-in-python/#palindrome-string
 def is_palindrome_iterative(string: str) -> bool:
     length = len(string)
@@ -24,7 +20,7 @@ is_palindrome_methods = {
 is_palindrome = is_palindrome_methods[METHOD]
 
 
-# My 1st approach
+# My 1st approach #
 #
 # def get_all_palindromes(string: str) -> set:
 #     chars = list(string)
@@ -46,9 +42,13 @@ is_palindrome = is_palindrome_methods[METHOD]
 #    return max(palindromes, key=len)
 
 
-# My 2nd approach
+# My 2nd approach #
 #
 # def get_longest_palindrome_increasing(string: str) -> str:
+#
+#     def compare_strings(a, b):
+#         return a if len(a) >= len(b) else b
+#
 #     if is_palindrome(string):
 #         return string
 #
@@ -67,7 +67,7 @@ is_palindrome = is_palindrome_methods[METHOD]
 #     return palindrome
 
 
-# My 3nd approach
+# My 3nd approach #
 def get_longest_palindrome_decreasing(string: str) -> str:
     length = len(string)
     for i in range(0, length):
