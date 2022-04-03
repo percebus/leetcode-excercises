@@ -1,3 +1,7 @@
+import os
+import sys
+path = os.path.abspath('.')
+sys.path.insert(1, path)
 from lib.palindromes.longest.neet import get_longest_palindrome
 
 
