@@ -1,6 +1,6 @@
 from typing import List
 
-from problems.utils import noop
+from lib.utils import noop
 
 
 TAKEN = '8'

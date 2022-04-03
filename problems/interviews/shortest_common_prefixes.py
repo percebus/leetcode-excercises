@@ -5,7 +5,7 @@ import more_itertools
 path = os.path.abspath('.')
 sys.path.insert(1, path)
 from pprint import pprint
-from problems.utils import DEBUG
+from config import DEBUG
 
 
 def categorize(words, prefix=''):

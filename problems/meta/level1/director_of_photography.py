@@ -3,7 +3,7 @@ import sys
 path = os.path.abspath('.')
 sys.path.insert(1, path)
 from pprint import pprint
-from problems.utils import DEBUG
+from config import DEBUG
 
 
 P = 'P'  # photographer

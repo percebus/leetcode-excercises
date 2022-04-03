@@ -1,4 +1,4 @@
-from problems.utils import noop
+from lib.utils import noop
 
 
 def inverse(char: str):
