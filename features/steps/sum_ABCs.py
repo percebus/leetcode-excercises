@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.meta.warmup.sum_abc import get_sum
+from problems.meta.coding.puzzles.warmup.sum_abc import get_sum
 
 
 @step("three integers (?P<A>.+), (?P<B>.+), and (?P<C>.+)")

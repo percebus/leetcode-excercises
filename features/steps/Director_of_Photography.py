@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.meta.level1.director_of_photography import getArtisticPhotographCount
+from problems.meta.coding.puzzles.level1.director_of_photography import getArtisticPhotographCount
 
 
 @step("a (?P<mask>.+) string 'C', of (?P<length>.+) 'N'")

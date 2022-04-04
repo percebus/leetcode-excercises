@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.meta.practice.reverse_to_make_equal import are_they_similar
+from problems.meta.coding.practice.reverse_to_make_equal import are_they_similar
 
 
 def process(string:str) -> list:
