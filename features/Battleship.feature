@@ -14,6 +14,7 @@ Feature: Battleship
       |  row  |
       | 0 0 1 |
       | 1 0 1 |
+
     When I call getHitProbability
     Then it returns a hit probability of 50%
     # 3 of the 6 cells in the grid contain battleships.
@@ -28,6 +29,7 @@ Feature: Battleship
       | row |
       | 1 1 |
       | 1 1 |
+
     When I call getHitProbability
     Then it returns a hit probability of 100%
     # All 4 cells contain battleships,
@@ -36,9 +38,10 @@ Feature: Battleship
 
   Scenario: 0 boats in 2 x 2
     Given a battleship matrix of 2 by 2
-      And with the following data:
+      But with the following data:
       | row |
       | 0 0 |
       | 0 0 |
+
     When I call getHitProbability
     Then it returns a hit probability of 0%

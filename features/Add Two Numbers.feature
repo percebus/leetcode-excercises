@@ -10,8 +10,8 @@ Feature: Add Two Numbers
 
   Scenario Outline: _
     Given two non-empty linked lists <nodes1> and <nodes2> representing two non-negative integers
-#     And the digits are stored in reverse order
 #     And each of their nodes contains a single digit
+#     But the digits are stored in reverse order
      When I call addTwoNumbers
      Then I get the sum as a <result> linked list
 
