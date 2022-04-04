@@ -14,7 +14,7 @@ Feature: Median of Two Sorted Arrays
       And of size <m> and <n> respectively
      When I call find_median
      Then return the <median> of the two sorted arrays <merged>
-#     And the overall run time complexity should be O(log (m+n)) # TODO
+#     But the overall run time complexity should be O(log (m+n)) # TODO
   Examples:
   |     array1      | m | array2 | n |      merged     | number(s) | median |
   |     [1, 3]      | 2 |  [2]   | 1 |    [1, 2, 3]    |    [2]    |      2 |
@@ -26,7 +26,7 @@ Feature: Median of Two Sorted Arrays
       And of size <m> and <n> respectively
      When I call find_median
      Then return the <median> of the two sorted arrays <merged>
-#     And the overall run time complexity should be O(log (m+n)) # TODO
+#     But the overall run time complexity should be O(log (m+n)) # TODO
   Examples:
   | array1 | m | array2 | n |    merged    | number(s)| median |   explanation  |
   | [1, 2] | 2 | [3, 4] | 2 | [1, 2, 3, 4] |  [2, 3]  |   2.5  | (2+3) /2 = 2.5 |
