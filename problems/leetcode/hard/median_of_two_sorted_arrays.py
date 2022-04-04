@@ -15,7 +15,7 @@ def find_median(nums1, nums2):
     is_pair = (size % 2) == 0
     idx = mid - 1
 
-    if is_pair is False:
+    if not is_pair:
         return nums3[idx]
 
     # implicit else
