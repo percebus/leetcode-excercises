@@ -1,4 +1,5 @@
 Feature: Merge k Sorted Lists
+
   # SRC: https://leetcode.com/problems/merge-k-sorted-lists/
   #
   # Constraints:
@@ -9,11 +10,13 @@ Feature: Merge k Sorted Lists
   #  * lists[i] is sorted in ascending order.
   #  * The sum of lists[i].length will not exceed 10^4
 
+
   Scenario Outline: Simple
     Given an <array> of k linked-lists lists
 #     And each linked-list is sorted in ascending order
      When I call mergeKLists
      Then it returns all the linked-lists merged into one sorted linked-list as <result>
+
   Examples:
   |     array          |    result     |
   | [ {1} ]            | {1}           |
@@ -29,6 +32,7 @@ Feature: Merge k Sorted Lists
 #     And each linked-list is sorted in ascending order
      When I call mergeKLists
      Then it returns all the linked-lists merged into one sorted linked-list as <result>
+
   Examples:
   |          array              |       result      |
   | [ {1→2}, {3→4}, {5→6} ]     | {1→2→3→4→5→6}     |

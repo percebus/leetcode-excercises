@@ -5,11 +5,13 @@ Feature: Reverse to Make Equal
   # Constraints:
   #  * All integers in array are in the range [0, 1,000,000,000].
 
+
   Scenario Outline: True
     Given two arrays <A> and <B>
 #     And both <A> and <B> are of length <N>
      When I run are_they_similar
      Then are_they_similar returns True
+
   Examples:
     | N |  A      |    B     |   exlanation   |
     | 1 | 1       | 1        |                |
@@ -26,6 +28,7 @@ Feature: Reverse to Make Equal
 #     And both <A> and <B> are of length <N>
      When I run are_they_similar
      Then are_they_similar returns False
+
   Examples:
     | N |    A    |    B    |
     | 4 | 1,2,3,4 | 1,2,3,5 |

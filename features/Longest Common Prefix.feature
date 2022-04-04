@@ -1,15 +1,18 @@
 Feature: Longest Common Prefix
-# SRC: https://leetcode.com/problems/longest-common-prefix/
-#
-# Constraints:
-#  * 1 <= strs.length <= 200
-#  * 0 <= strs[i].length <= 200
-#  * strs[i] consists of only lower-case English letters.
+
+  # SRC: https://leetcode.com/problems/longest-common-prefix/
+  #
+  # Constraints:
+  #  * 1 <= strs.length <= 200
+  #  * 0 <= strs[i].length <= 200
+  #  * strs[i] consists of only lower-case English letters.
+
 
   Scenario Outline: Common prefix
      Given some <words>
       When I call longest_common_prefix
       Then find the longest common <prefix> string amongst an array of strings
+
   Examples:
   |       words            | prefix |
   | flower, flow, flight   | fl     |
@@ -24,6 +27,7 @@ Feature: Longest Common Prefix
      Given some <words>
       When I call longest_common_prefix
       Then returns an empty string
+
   Examples:
   |         words          |
   | ''                     |
@@ -35,6 +39,7 @@ Feature: Longest Common Prefix
   Scenario Outline: Out of bounds
     Given an array of invalid <strings>
      Then handle the exception for the invalid chars
+
   Examples:
   |   strings  |
   | !          |

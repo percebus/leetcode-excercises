@@ -1,4 +1,5 @@
 Feature: Director of Photography
+
   # SRC: https://www.facebookrecruiting.com/portal/coding_puzzles/?puzzle=870874083549040
   #
   # A photography set consists of N cells in a row, numbered from 1 to N in order,
@@ -33,6 +34,7 @@ Feature: Director of Photography
       And distance between <minimum> and <maximum>
      When I call getArtisticPhotographCount
      Then I get the number of different artistic <photographs> which could potentially be taken at the set
+
   Examples:
 # |     constraint    |      distance     |             |
 # |    C     |   N    |    X    |    Y    |    result   |

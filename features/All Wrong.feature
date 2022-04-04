@@ -1,4 +1,5 @@
 Feature: All Wrong
+
   # SRC: https://www.facebookrecruiting.com/portal/coding_puzzles/?puzzle=1082217288848574
   #
   # There's a multiple-choice test with N questions, numbered from 1 to N.
@@ -12,11 +13,13 @@ Feature: All Wrong
   #  * 1 ≤ N ≤ 100
   #  * Ci ∈ {"A","B"}
 
+
   Scenario Outline: _
     Given a multiple-choice test with <N> questions, numbered 1 to N
       And a string with <correct> answers, each labelled A and B
      When I call getWrongAnswers(N, C)
      Then I get a string with the <wrong> answers
+
   Examples:
 # |   |     answers     |
   | N | correct | wrong |

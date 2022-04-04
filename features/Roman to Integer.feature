@@ -1,12 +1,14 @@
 Feature: Roman to Integer
-# SRC: https://leetcode.com/problems/roman-to-integer/
-#
-# Roman numerals are usually written largest to smallest from left to right.
-#
-# Constraints:
-# * 1 <= s.length <= 15
-# * s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
-# * It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+
+  # SRC: https://leetcode.com/problems/roman-to-integer/
+  #
+  # Roman numerals are usually written largest to smallest from left to right.
+  #
+  # Constraints:
+  # * 1 <= s.length <= 15
+  # * s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+  # * It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+
 
   # Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
   # Symbol       Value
@@ -21,6 +23,7 @@ Feature: Roman to Integer
     Given a roman <numeral>
      When I run roman_to_int
      Then convert it to an <integer>
+
   Examples:
     | numeral | integer |
     | I       |       1 |
@@ -40,6 +43,7 @@ Feature: Roman to Integer
     Given a roman <numeral>
      When I run roman_to_int
      Then convert it to an <integer>
+
   Examples:
     | numeral | integer |     explanation     |
     | II      |       2 | 1 + 1               |
@@ -53,12 +57,12 @@ Feature: Roman to Integer
     | MM      |    2000 | 1000 + 1000         |
 
 
-
   # 'I' can be placed before 'V' (5) and 'X' (10) to make 4 and 9.
   Scenario Outline: Prefix: 'I'
     Given a roman <numeral>
      When I run roman_to_int
      Then convert it to an <integer>
+
   Examples:
     | numeral | integer |                explanation                  |
     |  VI     |       6 | 5 + 1                                       |
@@ -75,6 +79,7 @@ Feature: Roman to Integer
     Given a roman <numeral>
      When I run roman_to_int
      Then convert it to an <integer>
+
   Examples:
     | numeral | integer |                explanation                    |
     |  LX     |      60 | 50 + 10                                       |
@@ -91,6 +96,7 @@ Feature: Roman to Integer
     Given a roman <numeral>
      When I run roman_to_int
      Then convert it to an <integer>
+
   Examples:
     | numeral | integer |               explanation                       |
     |  DC     |     600 | 500 + 100                                       |
@@ -106,6 +112,7 @@ Feature: Roman to Integer
     Given a roman <numeral>
      When I run roman_to_int
      Then convert it to an <integer>
+
   Examples:
     | numeral   | integer |
     | MCMXCIV   |    1994 |
@@ -119,6 +126,7 @@ Feature: Roman to Integer
      When I run roman_to_int
 #    Then throw an exception # TODO FIXME
      Then convert it to an <integer>
+
   Examples:
     | numeral | integer |
     | IIII    |       4 |

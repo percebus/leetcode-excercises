@@ -1,9 +1,11 @@
 Feature: Shortest Common Prefixes
 
+
   Scenario Outline: Same letter
      Given a list of <words>
       When I call shortest_common_prefixes
       Then find the shortest common <prefixes> strings amongst an array of strings
+
   Examples:
   |       words            |     prefixes     |
   | flow, flight           | fli, flo         |
@@ -20,6 +22,7 @@ Feature: Shortest Common Prefixes
      Given a list of <words>
       When I call shortest_common_prefixes
       Then find the shortest common <prefixes> strings amongst an array of strings
+
   Examples:
   |                words            |       prefixes     |
   | dog, zebra, bananas             | b, d, z            |
@@ -27,11 +30,11 @@ Feature: Shortest Common Prefixes
   | dog, zebra, duck, dove, bananas | b, dog, dov, du, z |
 
 
-
   Scenario Outline: FIXME Bugs
      Given a list of <words>
       When I call shortest_common_prefixes
       Then find the shortest common <prefixes> strings amongst an array of strings
+
   Examples:
   |       words          |   prefixes  |     expected     |
   | flow, flower         | flowe       | flow, flowe      |

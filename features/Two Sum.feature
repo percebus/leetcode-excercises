@@ -1,11 +1,13 @@
 Feature: Two Sum
-# SRC: https://leetcode.com/problems/two-sum/
-#
-# Constraints:
-#   * 2 <= nums.length <= 104
-#   * -109 <= nums[i] <= 109
-#   * -109 <= target <= 109
-#   * Only one valid answer exists. # TODO TEST
+
+  # SRC: https://leetcode.com/problems/two-sum/
+  #
+  # Constraints:
+  #   * 2 <= nums.length <= 104
+  #   * -109 <= nums[i] <= 109
+  #   * -109 <= target <= 109
+  #   * Only one valid answer exists. # TODO TEST
+
 
   Scenario Outline: _
      Given an <array> of integers nums
@@ -13,6 +15,7 @@ Feature: Two Sum
       When I call two_sum
       Then return <indices> of the <two_numbers>
        And they add up to <target>
+
   Examples:
   |   case       |     array      | target | indices  | two_numbers |
   | 2, 7, 11, 15 | [2, 7, 11, 15] |      9 |  [0,  1] |   [2,  7]   |

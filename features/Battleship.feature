@@ -6,6 +6,7 @@ Feature: Battleship
   #  * 1 ≤ R,C ≤100
   #  * 0 ≤ Gi,j ≤ 1
 
+
   # Sample test case #1
   Scenario: 3 boats in 2 x 3
     Given a battleship matrix of 2 by 3
