@@ -2,18 +2,9 @@
 
 # Reverse to Make Equal
 #
-# pylint: disable=line-too-long
-# SRC: https://www.facebookrecruiting.com/portal/coding_practice_question/?problem_id=2869293499822992&c=274804128169977&ppid=454615229006519&practice_plan=0
-# pylint: enable=line-too-long
-#
-# Given two arrays A and B of length N,
-# determine if there is a way to make A equal to B
-# by reversing any subarrays from array B any number of times.
-#
 # Signature
 #   bool areTheyEqual(int[] arr_a, int[] arr_b)
 #
-# Input: All integers in array are in the range [0, 1,000,000,000].
 # Output: Return true if B can be made equal to A, return false otherwise.
 def are_they_similar(array_a: list, array_b: list) -> bool:
     if array_a == array_b:
