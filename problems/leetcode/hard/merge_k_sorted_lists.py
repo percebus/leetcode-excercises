@@ -2,7 +2,7 @@ import os
 import sys
 path = os.path.abspath('.')
 sys.path.insert(1, path)
-from problems.leetcode.list_node import nodes_to_list, list_to_nodes
+from lib.nodes.lists import nodes_to_list, list_to_nodes
 
 
 # SRC: https://leetcode.com/problems/merge-k-sorted-lists/

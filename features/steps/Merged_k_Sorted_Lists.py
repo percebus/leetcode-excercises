@@ -1,5 +1,5 @@
 from aloe import step, world
-from problems.leetcode.list_node import list_to_nodes, nodes_to_list
+from lib.nodes.lists import list_to_nodes, nodes_to_list
 from problems.leetcode.hard.merge_k_sorted_lists import mergeKLists
 
 

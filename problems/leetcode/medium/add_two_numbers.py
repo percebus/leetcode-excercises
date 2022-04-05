@@ -2,7 +2,7 @@ import os
 import sys
 path = os.path.abspath('.')
 sys.path.insert(1, path)
-from problems.leetcode.list_node import ListNode, list_to_nodes, nodes_to_list
+from lib.nodes.lists import ListNode, list_to_nodes, nodes_to_list
 
 
 def process(node: ListNode) -> int:

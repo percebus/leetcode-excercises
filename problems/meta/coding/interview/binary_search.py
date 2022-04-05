@@ -1,3 +1,5 @@
+from pprint import pprint
+from lib.nodes.fork import ForkNode
 
 
 #     3
@@ -26,27 +28,64 @@
 # 7,6 ~ 3
 
 
+# pylint: disable=inconsistent-return-statements
+def find_node(node: ForkNode, value):
+    def recurse(node):
+        if node is None:
+            return
 
-# class ForkNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-#
-#
-# # TODO
-# def find_common_ancestors(binary_tree: ForkNode, nums: tuple) -> int:
-#     x, y = nums
-#
-#     def recurse(node):
-#         if node is None:
-#             return
-#
-#         if node.val == x:
-#             a = node
-#
-#         if node.val == y:
-#             b = node
-#
-#         recurse(node.left)
-#         recurse(node.right)
+        if node.val == value:
+            return node
+
+        _node = recurse(node.left)
+        if _node is not None:
+            return _node
+
+        return recurse(node.right)
+
+    return recurse(node)
+# pylint: enable=inconsistent-return-statements
+
+
+def parse_node(node: ForkNode):
+    def recurse(node, result):
+        if node is None:
+            return result
+
+        result.append(node.val)
+        return [
+            recurse(node.left, result.copy()),
+            recurse(node.right, result.copy())
+        ]
+
+    return recurse(node, [])
+
+
+# TODO
+def find_common_ancestors(binary_tree: ForkNode, nums: tuple) -> int:
+    x = nums[0]
+    find_node(binary_tree, x)
+
+
+def run_all():
+    # node5 = ForkNode(val=5)
+
+    node2 = ForkNode(val=2)
+    node6 = ForkNode(val=6)
+    node9 = ForkNode(val=9, left=node2, right=node6)
+
+    node4 = ForkNode(val=4)
+    node7 = ForkNode(val=7, right=node4)
+
+    node3 = ForkNode(val=3, left=node9, right=node7)
+
+    search = 6
+    node = find_node(node3, search)
+    print(f'searched:{search}, found:{node}')
+
+    nodes = parse_node(node3)
+    pprint(nodes)
+
+
+if __name__ == '__main__':
+    run_all()
