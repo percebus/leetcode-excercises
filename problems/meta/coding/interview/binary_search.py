@@ -92,13 +92,22 @@ def find_common_ancestors(binary_tree: ForkNode, nums: tuple) -> int:
 def run_all():
     # node5 = ForkNode(val=5)
 
+    #   9
+    #  / \
+    # 2   6
     node2 = ForkNode(val=2)
     node6 = ForkNode(val=6)
     node9 = ForkNode(val=9, left=node2, right=node6)
 
+    # 7
+    #  \
+    #   4
     node4 = ForkNode(val=4)
     node7 = ForkNode(val=7, right=node4)
 
+    #   3
+    #  / \
+    # 9   7
     node3 = ForkNode(val=3, left=node9, right=node7)
 
     search = 4
