@@ -30,7 +30,7 @@ def mergeKLists(lists: list):
     return list_to_nodes(flattened)
 
 
-def test(lists: list, expected: list = None):
+def run(lists: list, expected: list = None):
     collections = list(map(list_to_nodes, lists))
     result = mergeKLists(collections)
     actual = str(nodes_to_list(result))
@@ -39,7 +39,7 @@ def test(lists: list, expected: list = None):
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Example 1:
     # Input: lists = [
     #   [1,4,5],
@@ -50,7 +50,7 @@ def test_all():
     # Output: [1,1,2,3,4,4,5,6]
     # Explanation: merging them into one sorted list:
     # 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6
-    test(
+    run(
         [[1, 4, 5], [1, 3, 4], [2, 6]],
         expected=[1, 1, 2, 3, 4, 4, 5, 6])
 
@@ -58,16 +58,16 @@ def test_all():
     #
     # Input: lists = []
     # Output: []
-    test([], expected=[])
+    run([], expected=[])
 
     # Example 3:
     #
     # Input: lists = [[]]
     # Output: []
-    test([[]], expected=[])
+    run([[]], expected=[])
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

@@ -42,7 +42,7 @@ def get_prime_factors(num):
     return None
 
 
-def test(x: int, expected=None):
+def run(x: int, expected=None):
     result = get_prime_factors(x)
     assert result == expected, f'expected:{expected}, got:{result}'
     print('✅', end='')
@@ -50,7 +50,7 @@ def test(x: int, expected=None):
 
 if __name__ == '__main__':
     # The prime factors of 13195 are 5, 7, 13 and 29.
-    test(13195, expected=29)
+    run(13195, expected=29)
 
     # What is the largest prime factor of the number 600851475143 ?
-    test(600851475143, expected=10)
+    run(600851475143, expected=10)

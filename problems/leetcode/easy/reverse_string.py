@@ -13,26 +13,26 @@ def reverseString(s: str) -> None:
         s[idx] = item
 
 
-def test(chars, expected=None):
+def run(chars, expected=None):
     reverseString(chars)
     actual = ''.join(chars)
     assert actual == ''.join(expected), f'expected{expected}, got:{chars}'
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Example 1:
     # Input: s = ['h','e','l','l','o']
     # Output: ['o','l','l','e','h']
-    test(['h', 'e', 'l', 'l', 'o'], expected=['o', 'l', 'l', 'e', 'h'])
+    run(['h', 'e', 'l', 'l', 'o'], expected=['o', 'l', 'l', 'e', 'h'])
 
     # Example 2:
     # Input: s = ['H', 'a', 'n', 'n', 'a', 'h']
     # Output: ['h', 'a', 'n', 'n', 'a', 'H']
-    test(['H', 'a', 'n', 'n', 'a', 'h'], expected=['h', 'a', 'n', 'n', 'a', 'H'])
+    run(['H', 'a', 'n', 'n', 'a', 'h'], expected=['h', 'a', 'n', 'n', 'a', 'H'])
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

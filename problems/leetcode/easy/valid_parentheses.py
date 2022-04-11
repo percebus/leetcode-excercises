@@ -32,35 +32,35 @@ def is_valid(string):
     return not opened
 
 
-def test(string, expected=None):
+def run(string, expected=None):
     result = is_valid(string)
     assert result == expected, f"'{string}'.- expected:{expected}, got:{result}"
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Example 1:
     #  * Input: s = "()"
     #  * Output: true
-    test('()', expected=True)
+    run('()', expected=True)
 
     # Example 2:
     #  * Input: s = "()[]{}"
     #  * Output: true
-    test('()[]{}', expected=True)
+    run('()[]{}', expected=True)
 
     # Example 3:
     #  * Input: s = "(]"
     #  * Output: false
-    test('(]', expected=False)
+    run('(]', expected=False)
 
     # Example
     #  * Input: s = "["
     #  * Output: false
-    test('[', expected=False)
+    run('[', expected=False)
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

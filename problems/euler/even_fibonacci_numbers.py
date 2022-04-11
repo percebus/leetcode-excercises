@@ -24,28 +24,28 @@ def sum_evens(limit=1000):
     return sum
 
 
-def test(limit: int, expected: list = None):
+def run(limit: int, expected: list = None):
     result = sum_evens(limit)
     assert result == expected, f'expected:{expected}, got:{result}'
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     #       2
     #       8
-    test(10, expected=10)
+    run(10, expected=10)
 
     #       2
     #       8
     #      34
-    test(100, expected=44)
+    run(100, expected=44)
 
     #       2
     #       8
     #      34
     #     144
     #     610
-    test(1000, expected=798)
+    run(1000, expected=798)
 
     #       2
     #       8
@@ -53,7 +53,7 @@ def test_all():
     #     144
     #     610
     #    2584
-    test(10000, expected=3382)
+    run(10000, expected=3382)
 
     #       2
     #       8
@@ -63,7 +63,7 @@ def test_all():
     #    2584
     #   10946
     #   46368
-    test(100000, expected=60696)
+    run(100000, expected=60696)
 
     #       2
     #       8
@@ -75,7 +75,7 @@ def test_all():
     #   46368
     #  196418
     #  832040
-    test(1000000, expected=1089154)
+    run(1000000, expected=1089154)
 
     #       2
     #       8
@@ -88,8 +88,8 @@ def test_all():
     #  196418
     #  832040
     # 3524578
-    test(4000000, expected=4613732)
+    run(4000000, expected=4613732)
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

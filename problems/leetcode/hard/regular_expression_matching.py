@@ -19,18 +19,18 @@ def isMatch(s: str, p: str) -> bool:
     return re.match(f'^{pattern}$', string) is not None
 
 
-def test(string: str, pattern: str, expected: bool = None):
+def run(string: str, pattern: str, expected: bool = None):
     result = isMatch(string, pattern)
     assert result is expected, f'expected:{expected}, got:{result}'
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Example 1:
     # Input: s="aa", p="a"
     # Output: false
     # Explanation: "a" does not match the entire string "aa".
-    test('aa', 'a', expected=False)
+    run('aa', 'a', expected=False)
 
     # Example 2:
     #
@@ -38,19 +38,19 @@ def test_all():
     # Output: true
     # Explanation: '*' means zero or more of the preceding element, 'a'.
     # Therefore, by repeating 'a' once, it becomes "aa".
-    test('aa', 'a*', expected=True)
+    run('aa', 'a*', expected=True)
 
     # Example 3:
     #
     # Input: s="ab", p=".*"
     # Output: true
     # Explanation: ".*" means "zero or more (*) of any character (.)".
-    test('ab', '.*', expected=True)
+    run('ab', '.*', expected=True)
 
-    test('aab', 'c*a*b', expected=True)
+    run('aab', 'c*a*b', expected=True)
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

@@ -15,28 +15,28 @@ def longestPalindrome(s: str) -> str:
     return get_longest_palindrome(s)
 
 
-def test(string: str, expected: str = None):
+def run(string: str, expected: str = None):
     result = longestPalindrome(string)
     assert result == expected, f'expected:{expected}, got:{result}'
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Example 1:
     #
     # Input: s = "babad"
     # Output: "bab"
     # Explanation: "aba" is also a valid answer.
-    test('babad', expected='bab')
+    run('babad', expected='bab')
 
     # Example 2:
     #
     # Input: s = "cbbd"
     # Output: "bb"
-    test('cbbd', expected='bb')
+    run('cbbd', expected='bb')
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

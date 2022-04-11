@@ -39,13 +39,13 @@ def filter_by_distance(points: list, k: int = 1, center=(0, 0)) -> list:
     ]
 
 
-def test(points:list, k:int, center=(0,0), expected=None):
+def run(points:list, k:int, center=(0,0), expected=None):
     result = filter_by_distance(points, k, center=center)
     assert str(result) == str(expected), f'expected:{expected}, got:{result}'
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     points = [
         (2, 2),
         (-1, 1),
@@ -56,23 +56,23 @@ def test_all():
         (-1, -1),
     ]
 
-    test(points, 1, expected=[(-1, 1)])
-    test(points, 2, expected=[(-1, 1), (1, 1)])
-    test(points, 3, expected=[(-1, 1), (1, 1), (1, -1)])
-    test(points, 4, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1)])
-    test(points, 5, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2)])
-    test(points, 6, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2)])
-    test(points, 7, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2), (2, 3)])
-    test(points, 8, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2), (2, 3)])
+    run(points, 1, expected=[(-1, 1)])
+    run(points, 2, expected=[(-1, 1), (1, 1)])
+    run(points, 3, expected=[(-1, 1), (1, 1), (1, -1)])
+    run(points, 4, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1)])
+    run(points, 5, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2)])
+    run(points, 6, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2)])
+    run(points, 7, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2), (2, 3)])
+    run(points, 8, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2), (2, 3)])
 
-    test(points, 7, center=(1, 0),
+    run(points, 7, center=(1, 0),
          expected=[(1, 1), (1, -1), (2, 2), (-1, 1), (-1, -1), (3, 2), (2, 3)])
 
-    test(points, 7, center=(2, 2),
+    run(points, 7, center=(2, 2),
          expected=[(2, 2), (3, 2), (2, 3), (1, 1), (-1, 1), (1, -1), (-1, -1)])
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

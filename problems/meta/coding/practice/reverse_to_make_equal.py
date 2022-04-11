@@ -28,13 +28,13 @@ def are_they_similar(array_a: list, array_b: list) -> bool:
     return False
 
 
-def test(array_a: list, array_b: list, expected: bool = None):
+def run(array_a: list, array_b: list, expected: bool = None):
     result = are_they_similar(array_a, array_b)
     assert result == expected, f'expected:{expected}, got:{result}'
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Example
     #   A = [1, 2, 3, 4]
     #   B = [1, 4, 3, 2]
@@ -44,10 +44,10 @@ def test_all():
     # Explanation
     # After reversing the subarray of B from indices 1 to 3,
     # array B will equal array A.
-    test([1, 2, 3, 4], [1, 4, 3, 2], expected=True)
+    run([1, 2, 3, 4], [1, 4, 3, 2], expected=True)
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()

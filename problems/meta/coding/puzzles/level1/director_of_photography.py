@@ -142,12 +142,12 @@ def run_large_sample():
     pretty_print(scenarios)
 
 
-def test(length:int, mask:str, minimium: int, maximum: int, expected: int) -> None:
+def run(length:int, mask:str, minimium: int, maximum: int, expected: int) -> None:
     result = getArtisticPhotographCount(length, mask, minimium, maximum)
     assert result == expected, f'expected:{expected}, got:{result}'
 
 
-def test_all():
+def run_all():
     # Sample test case #1
     # * N=5, C=APABA
     # * X=1, Y=2
@@ -157,7 +157,7 @@ def test_all():
     # The absolute distances between photographer/actor and actor/backdrop must be between 1 and 2.
     # The only possible photograph that can be taken is with the 3 middle cells,
     # and it happens to be artistic.
-    test(5, 'APABA', 1, 2, expected=1)
+    run(5, 'APABA', 1, 2, expected=1)
 
     # Sample test case #2
     # * N=5, C=APABA
@@ -168,7 +168,7 @@ def test_all():
     # he only possible photograph is again taken with the 3 middle cells.
     # However, as the distance requirement is between 2 and 3,
     # it is not possible to take an artistic photograph.
-    test(5, 'APABA', 2, 3, expected=0)
+    run(5, 'APABA', 2, 3, expected=0)
 
     # Sample test case #3
     # N=8, C=.PBAAP.B
@@ -180,9 +180,9 @@ def test_all():
     #  | .P..A..B |
     #  | ..BA.P.. |
     #  | ..B.AP.. |
-    test(8, '.PBAAP.B', 1, 3, expected=3)
+    run(8, '.PBAAP.B', 1, 3, expected=3)
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()
 #   run_large_sample() # FIXME it takes 30s!

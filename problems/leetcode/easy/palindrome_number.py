@@ -11,36 +11,36 @@ def is_palindrome(number):
     return str1 == str2
 
 
-def test(number, expected=None):
+def run(number, expected=None):
     result = is_palindrome(number)
 #   print(f'{number}: {result}') # DEBUG only
     assert result == expected
     print('✅', end='')
 
 
-def test_all():
+def run_all():
     # Input: x = 121
     # Output: true
     # Explanation: 121 reads as 121 from left to right and from right to left.
-    test(121, expected=True)
+    run(121, expected=True)
 
-    test(123, expected=False)
+    run(123, expected=False)
 
-    test(1221, expected=True)
+    run(1221, expected=True)
 
     # Input: x = -121
     # Output: false
     # Explanation: From left to right, it reads -121. From right to left, it becomes 121-.
     # Therefore it is not a palindrome.
-    test(-121, expected=False)
+    run(-121, expected=False)
 
     # Input: x = 10
     # Output: false
     # Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
-    test(10, expected=False)
+    run(10, expected=False)
 
     print('\n')
 
 
 if __name__ == '__main__':
-    test_all()
+    run_all()
