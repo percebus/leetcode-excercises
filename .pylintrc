@@ -10,8 +10,9 @@
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
 disable=fixme,
-        missing-docstring,
-        invalid-name,
+        broad-except,
         duplicate-code,
+        invalid-name,
+        missing-docstring,
         wrong-import-order,
         wrong-import-position
