@@ -13,6 +13,7 @@ Feature: Sum Even Fibonacci Numbers
     Given A <limit> number
      When I call sum_evens
      Then I get the <total> sum of all even numbers inside the Fibonacci series, up until that limit
+
   Examples:
   |  limit  |  total  |                          explanation                            |
   |       1 |       0 |                                                                 |

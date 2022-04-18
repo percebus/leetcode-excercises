@@ -1,19 +1,8 @@
-
-
-# SRC: https://github.com/nayuki/Project-Euler-solutions/blob/master/python/p001.py?ts=4
-def sum_multiples_nayuki(limit):
-    return sum(x for x in range(limit) if (x % 3 == 0 or x % 5 == 0))
-
-
-# SRC: https://projecteuler.net/problem=1
-def sum_multiples(limit, multiples):
-    nums = set(
-        num
-        for num in range(limit)
-        for multiple in multiples
-        if (num % multiple) == 0)
-
-    return sum(nums)
+import os
+import sys
+path = os.path.abspath('.')
+sys.path.insert(1, path)
+from problems.euler.multiples_of_3_or_5.percebus import sum_multiples
 
 
 def run(limit: int, multiples: list = [3, 5], expected: list = None):
