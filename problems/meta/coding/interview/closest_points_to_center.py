@@ -1,12 +1,11 @@
-
-
-
 # Euclidean distance
 def calculate_distance(point_a, point_b):
     x1, y1 = point_a
     x2, y2 = point_b
 
-    fn = lambda a1, a2: (a2 - a1) ** 2
+    def fn(a1, a2):
+        return (a2 - a1) ** 2
+
     return fn(x1, x2) + fn(y1, y2)
 
 
@@ -39,7 +38,7 @@ def filter_by_distance(points: list, k: int = 1, center=(0, 0)) -> list:
     ]
 
 
-def run(points:list, k:int, center=(0,0), expected=None):
+def run(points: list, k: int, center=(0, 0), expected=None):
     result = filter_by_distance(points, k, center=center)
     assert str(result) == str(expected), f'expected:{expected}, got:{result}'
     print('✅', end='')
@@ -66,10 +65,10 @@ def run_all():
     run(points, 8, expected=[(-1, 1), (1, 1), (1, -1), (-1, -1), (2, 2), (3, 2), (2, 3)])
 
     run(points, 7, center=(1, 0),
-         expected=[(1, 1), (1, -1), (2, 2), (-1, 1), (-1, -1), (3, 2), (2, 3)])
+        expected=[(1, 1), (1, -1), (2, 2), (-1, 1), (-1, -1), (3, 2), (2, 3)])
 
     run(points, 7, center=(2, 2),
-         expected=[(2, 2), (3, 2), (2, 3), (1, 1), (-1, 1), (1, -1), (-1, -1)])
+        expected=[(2, 2), (3, 2), (2, 3), (1, 1), (-1, 1), (1, -1), (-1, -1)])
 
     print('\n')
 
