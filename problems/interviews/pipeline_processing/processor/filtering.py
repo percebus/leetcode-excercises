@@ -16,7 +16,9 @@ class FilterProcessor(Processor):
         timestamp, temperature = data
         # pylint: enable=(unused-variable)
 
-        assert timestamp >= self.previous, f'entry:{timestamp} is out of order, previous:{self.previous}'
+        assert timestamp >= self.previous, \
+            f'entry:{timestamp} is out of order, previous:{self.previous}'
+
         self.previous = timestamp
 
         try:

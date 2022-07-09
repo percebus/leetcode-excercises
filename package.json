@@ -5,8 +5,9 @@
   "main": "Gruntfile.js",
   "scripts": {
     "pip:install:dev": "python -m pip install -r requirements.dev.txt",
+    "pip:install:prd": "python -m pip install -r requirements.prd.txt",
     "pip:install:all": "python -m pip install -r requirements.txt",
-    "npm:install:global": "npm install -g standard grunt-cli",
+    "npm:install:global": "npm install --location=global grunt-cli",
     "setup": "npm run pip:install:all && npm run npm:install:global",
     "setup:ci": "npm run setup",
     "grunt:lint": "grunt lint --color --verbose",
@@ -36,10 +37,11 @@
   },
   "homepage": "https://github.com/percebus/leetcode-excercises#readme",
   "dependencies": {
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.3",
     "load-grunt-tasks": "^5.1.0"
   },
   "devDependencies": {
-    "grunt-shell": "^3.0.1"
+    "grunt-shell": "^3.0.1",
+    "standard": "latest"
   }
 }

@@ -3,8 +3,9 @@ on:
   push:
   schedule:
     - cron: '* 0 * * *'
+
 jobs:
-  Build:
+  Test:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
