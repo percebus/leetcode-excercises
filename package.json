@@ -17,7 +17,7 @@
     "lint:python": "npm run pylint:problems",
     "lint": "npm run lint:python",
     "aloe": "aloe --verbose",
-    "pretest": "npm run lint",
+    "FIXMEpretest": "npm run lint",
     "test": "npm run aloe"
   },
   "repository": {

@@ -25,5 +25,8 @@ jobs:
       run: npm run setup:ci --if-present
     - name: npm install
       run: npm ci
+    - name: lint
+      run: npm run lint
+      continue-on-error: true
     - name: aloe
       run: npm test
