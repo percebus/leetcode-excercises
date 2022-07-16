@@ -1,8 +1,5 @@
-name: Continuous Integration
-on:
-  push:
-  schedule:
-    - cron: '* 0 * * *'
+name: verift
+on: [push]
 
 jobs:
   Test:
@@ -10,21 +7,23 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3
-    - name: setup node@16
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
+    - name: ls
+      run: ls -la
+
     - name: setup python@3.X
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
         architecture: 'x64'
-    - name: ls
-      run: ls -la
+    - name: setup node@16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
     - name: setup
       run: npm run setup:ci --if-present
     - name: npm install
       run: npm ci
+
     - name: lint
       run: npm run lint
       continue-on-error: true
