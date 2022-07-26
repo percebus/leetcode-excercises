@@ -7,17 +7,16 @@
     "pip:install:dev": "python -m pip install -r requirements.dev.txt",
     "pip:install:prd": "python -m pip install -r requirements.prd.txt",
     "pip:install:all": "python -m pip install -r requirements.txt",
-    "npm:install:global": "npm install --location=global grunt-cli",
-    "setup": "npm run pip:install:all && npm run npm:install:global",
+    "setup": "npm run pip:install:all",
     "setup:ci": "npm run setup",
-    "grunt:lint": "grunt lint --color --verbose",
-    "pylint": "python -m pylint --verbose --rcfile=.pylintrc",
-    "pylint:problems": "npm run pylint -- problems/",
-    "pylint:features": "npm run pylint -- features/",
-    "lint:python": "npm run pylint:problems",
+    "flake8": "python -m flake8",
+    "flake8:test": "npm run flake8 -- test",
+    "flake8:featues": "npm run flake8 -- features",
+    "flake8:problems": "npm run flake8 -- problems",
+    "lint:python": "npm run flake8:problems",
     "lint": "npm run lint:python",
     "aloe": "aloe --verbose",
-    "FIXMEpretest": "npm run lint",
+    "pretest": "npm run lint",
     "test": "npm run aloe"
   },
   "repository": {
@@ -35,13 +34,5 @@
   "bugs": {
     "url": "https://github.com/percebus/leetcode-excercises/issues"
   },
-  "homepage": "https://github.com/percebus/leetcode-excercises#readme",
-  "dependencies": {
-    "grunt": "^1.5.3",
-    "load-grunt-tasks": "^5.1.0"
-  },
-  "devDependencies": {
-    "grunt-shell": "^3.0.1",
-    "standard": "latest"
-  }
+  "homepage": "https://github.com/percebus/leetcode-excercises#readme"
 }

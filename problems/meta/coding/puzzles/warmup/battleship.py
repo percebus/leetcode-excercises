@@ -14,7 +14,6 @@ def calculate_hit_probability(rows: List[List[int]]) -> float:
     return ships / spaces
 
 
-
 # pylint: disable=unused-argument
 def getHitProbability(R: int, C: int, G: List[List[int]]) -> float:
     return calculate_hit_probability(G)
