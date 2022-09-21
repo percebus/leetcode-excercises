@@ -1,0 +1,13 @@
+{
+  "name": "leetcode-excercises",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "nose": "git@github.com:nose-devs/nose.git#release_1.3.7"
+  }
+}
