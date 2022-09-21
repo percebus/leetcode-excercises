@@ -4,9 +4,10 @@
   "description": "LeetCode.com excercises",
   "main": "Gruntfile.js",
   "scripts": {
-    "pip:install:dev": "python -m pip install -r requirements.dev.txt",
-    "pip:install:prd": "python -m pip install -r requirements.prd.txt",
-    "pip:install:all": "python -m pip install -r requirements.txt",
+    "pip:install": "python -m pip install",
+    "pip:install:dev": "npm run pip:install -- -r requirements.dev.txt",
+    "pip:install:prd": "npm run pip:install -- -r requirements.prd.txt",
+    "pip:install:all": "npm run pip:install -- -r requirements.txt",
     "setup": "npm run pip:install:all",
     "setup:ci": "npm run setup",
     "flake8": "python -m flake8",

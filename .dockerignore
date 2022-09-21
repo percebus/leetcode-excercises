@@ -1,4 +1,5 @@
+__pycache__/
 .github/
 .idea/
-__pycache__/
+.venv/
 node_modules/

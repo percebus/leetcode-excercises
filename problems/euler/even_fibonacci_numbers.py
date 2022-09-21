@@ -7,7 +7,7 @@ def sum_evens(limit=1000):
     sum = 0
 
     # TODO? build fibonacci separately, and then filter?
-    while(num <= limit):
+    while (num <= limit):
         if (num % 2) == 0:
             sum += num
 
