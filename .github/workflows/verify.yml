@@ -23,7 +23,8 @@ jobs:
         python-version: ${{ env.PYTHON_VERSION }}
     - name: debug
       run: |
-        ls -la ${{ env.LD_LIBRARY_PATH }}
+        python -m pip install -r requirements.txt --user
+        ls -la ~/
 
     - name: setup node@${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
