@@ -1,11 +1,5 @@
-# FIXME nose monkeypatch
-import collections
-import collections.abc
-collections.Callable = collections.abc.Callable
-
-
 import string
-from aloe import step, world
+from monkeypatch import step, world
 from test.utils import assert_is_in_range
 from problems.leetcode.easy.longest_common_prefix import longest_common_prefix
 

@@ -1,10 +1,4 @@
-# FIXME nose monkeypatch
-import collections
-import collections.abc
-collections.Callable = collections.abc.Callable
-
-
-from aloe import step, world
+from monkeypatch import step, world
 from test.utils import assert_is_in_range
 from problems.leetcode.easy.two_sum import two_sum
 

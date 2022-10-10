@@ -1,9 +1,4 @@
-# FIXME nose monkeypatch
-import collections
-import collections.abc
-collections.Callable = collections.abc.Callable
-
-from aloe import step, world
+from monkeypatch import step, world
 from aloe.tools import guess_types
 from problems.meta.coding.puzzles.warmup.battleship import getHitProbability
 
