@@ -11,6 +11,7 @@
     "pip:install:dev": "npm run pip:install -- -r requirements.dev.txt",
     "pip:install:prd": "npm run pip:install -- -r requirements.prd.txt",
     "pip:install:all": "npm run pip:install -- -r requirements.txt",
+    "setup": "npm run pip:install:all",
     "setup:ci": "npm run setup",
     "flake8": "python -m flake8",
     "flake8:test": "npm run flake8 -- test",
