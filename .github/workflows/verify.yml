@@ -1,5 +1,6 @@
-name: verift
-on: [push]
+name: Verify
+on:
+  push:
 
 env:
   ARCHITECTURE: x64
@@ -28,12 +29,18 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
     - name: setup
-      run: npm run setup:ci --if-present
+      run: |
+        source .venv/Scripts/activate
+        npm run setup:ci --if-present
     - name: npm install
       run: npm ci
 
     - name: lint
-      run: npm run lint
+      run: |
+        source .venv/Scripts/activate
+        npm run lint
       continue-on-error: true
     - name: aloe
-      run: aloe features/*.feature --verbose
+      run: |
+        source .venv/Scripts/activate
+        aloe features/*.feature --verbose
