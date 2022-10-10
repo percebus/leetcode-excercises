@@ -1,3 +1,9 @@
+# FIXME nose monkeypatch
+import collections
+import collections.abc
+collections.Callable = collections.abc.Callable
+
+
 from aloe import step, world
 from problems.leetcode.easy.valid_parentheses import is_valid
 

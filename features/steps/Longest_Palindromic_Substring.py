@@ -1,3 +1,9 @@
+# FIXME nose monkeypatch
+import collections
+import collections.abc
+collections.Callable = collections.abc.Callable
+
+
 from aloe import step, world
 
 from problems.leetcode.medium.longest_palindromic_substring import longestPalindrome

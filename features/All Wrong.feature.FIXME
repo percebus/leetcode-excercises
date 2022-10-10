@@ -20,6 +20,7 @@ Feature: All Wrong
      When I call getWrongAnswers(N, C)
      Then I get a string with the <wrong> answers
 
+  # FIXME steps going to wrong step/*.py
   Examples:
 # |   |     answers     |
   | N | correct | wrong |
