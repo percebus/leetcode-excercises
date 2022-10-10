@@ -5,7 +5,7 @@ on:
 env:
   ARCHITECTURE: x64
   NODE_VERSION: '16.X'
-  PYTHON_VERSION: '3.X'
+  PYTHON_VERSION: '3.10.5'
 
 jobs:
   Test:
@@ -21,28 +21,21 @@ jobs:
       with:
         architecture: ${{ env.ARCHITECTURE }}
         python-version: ${{ env.PYTHON_VERSION }}
-    - name: venv
+    - name: debug
       run: |
-        python -m venv ./.venv
-        source .venv/Scripts/activate
+        ls -la ${{ env.LD_LIBRARY_PATH }}
 
     - name: setup node@${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ env.NODE_VERSION }}
     - name: setup
-      run: |
-        source .venv/Scripts/activate
-        npm run setup:ci --if-present
+      run: npm run setup:ci --if-present
     - name: npm install
       run: npm ci
 
     - name: lint
-      run: |
-        source .venv/Scripts/activate
-        npm run lint
+      run: npm run lint
       continue-on-error: true
     - name: aloe
-      run: |
-        source .venv/Scripts/activate
-        aloe features/*.feature --verbose
+      run: aloe features/*.feature --verbose
