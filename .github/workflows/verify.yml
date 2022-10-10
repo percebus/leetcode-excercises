@@ -22,7 +22,9 @@ jobs:
         architecture: ${{ env.ARCHITECTURE }}
         python-version: ${{ env.PYTHON_VERSION }}
     - name: venv
-      run: python -m venv .venv
+      run: |
+        python -m venv ./.venv
+        source .venv/Scripts/activate
 
     - name: setup node@${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
