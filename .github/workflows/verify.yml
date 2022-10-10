@@ -1,6 +1,11 @@
 name: verift
 on: [push]
 
+env:
+  ARCHITECTURE: x64
+  NODE_VERSION: '16.X'
+  PYTHON_VERSION: '3.X'
+
 jobs:
   Test:
     runs-on: ubuntu-latest
@@ -10,15 +15,18 @@ jobs:
     - name: ls
       run: ls -la
 
-    - name: setup python@3.X
+    - name: setup python@${{ env.PYTHON_VERSION }}
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
-        architecture: 'x64'
-    - name: setup node@16
+        architecture: ${{ env.ARCHITECTURE }}
+        python-version: ${{ env.PYTHON_VERSION }}
+    - name: venv
+      run: python -m venv .venv
+
+    - name: setup node@${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: ${{ env.NODE_VERSION }}
     - name: setup
       run: npm run setup:ci --if-present
     - name: npm install
@@ -28,4 +36,4 @@ jobs:
       run: npm run lint
       continue-on-error: true
     - name: aloe
-      run: npm test
+      run: aloe features/*.feature --verbose
