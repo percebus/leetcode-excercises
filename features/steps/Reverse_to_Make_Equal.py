@@ -1,3 +1,9 @@
+# FIXME nose monkeypatch
+import collections
+import collections.abc
+collections.Callable = collections.abc.Callable
+
+
 from aloe import step, world
 from problems.meta.coding.practice.reverse_to_make_equal import are_they_similar
 

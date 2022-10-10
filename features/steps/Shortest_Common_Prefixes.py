@@ -1,3 +1,9 @@
+# FIXME nose monkeypatch
+import collections
+import collections.abc
+collections.Callable = collections.abc.Callable
+
+
 from aloe import step, world
 from problems.interviews.shortest_common_prefixes import get_prefixes
 

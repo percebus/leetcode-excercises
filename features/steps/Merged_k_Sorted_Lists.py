@@ -1,3 +1,9 @@
+# FIXME nose monkeypatch
+import collections
+import collections.abc
+collections.Callable = collections.abc.Callable
+
+
 from aloe import step, world
 from lib.nodes.lists import list_to_nodes, nodes_to_list
 from problems.leetcode.hard.merge_k_sorted_lists import mergeKLists
