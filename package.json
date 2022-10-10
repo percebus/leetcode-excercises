@@ -4,8 +4,6 @@
   "description": "LeetCode.com excercises",
   "main": "Gruntfile.js",
   "scripts": {
-    "prebower:install": "bower update",
-    "bower:install": "bower install",
     "prepip:install": "python -m pip install pip --upgrade",
     "pip:install": "python -m pip install",
     "pip:install:dev": "npm run pip:install -- -r requirements.dev.txt",
