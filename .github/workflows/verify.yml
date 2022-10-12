@@ -8,7 +8,36 @@ env:
   PYTHON_VERSION: '3.10.5'
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: ls
+      run: ls -la
+
+    - name: setup python@${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v4
+      with:
+        architecture: ${{ env.ARCHITECTURE }}
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: setup node@${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: setup
+      run: npm run setup:ci --if-present
+    - name: npm install
+      run: npm ci
+
+    - name: lint
+      run: npm run lint
+      continue-on-error: true
+
   tests:
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 20
@@ -56,8 +85,5 @@ jobs:
     - name: npm install
       run: npm ci
 
-    - name: lint
-      run: npm run lint
-      continue-on-error: true
     - name: aloe
-      run: aloe features/${{ matrix.problem }}.feature --verbose
+      run: aloe "features/${{ matrix.problem }}.feature" --verbose
