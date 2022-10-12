@@ -8,8 +8,33 @@ env:
   PYTHON_VERSION: '3.10.5'
 
 jobs:
-  Test:
+  tests:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 20
+      matrix:
+        problem:
+          - Add Two Numbers
+#         - All Wrong
+          - Battleship
+#         - Cafeteria
+          - Director of Photography
+          - Longest Common Prefix
+          - Longest Palindromic Substring
+          - Median of Two Sorted Arrays
+          - Merged k Sorted Lists
+          - Palindrome Number
+          - Reverse String
+          - Reverse to Make Equal
+          - Roman to Integer
+          - Shortest Common Prefixes
+          - sum ABCs
+          - Sum Even Fibonacci Numbers
+          - Sum Multiples of 3 or 5
+          - Summary of Ranges
+          - Two Sum
+          - Valid Parentheses
+    name: "Test: ${{ matrix.problem }}"
     steps:
     - name: checkout
       uses: actions/checkout@v3
@@ -35,4 +60,4 @@ jobs:
       run: npm run lint
       continue-on-error: true
     - name: aloe
-      run: aloe features/*.feature --verbose
+      run: aloe features/${{ matrix.problem }}.feature --verbose
