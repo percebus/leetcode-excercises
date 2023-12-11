@@ -13,7 +13,7 @@
     "setup:ci": "npm run setup",
     "flake8": "python -m flake8",
     "flake8:test": "npm run flake8 -- test",
-    "flake8:featues": "npm run flake8 -- features",
+    "flake8:features": "npm run flake8 -- features",
     "flake8:problems": "npm run flake8 -- problems",
     "lint:python": "npm run flake8:problems",
     "lint": "npm run lint:python",
